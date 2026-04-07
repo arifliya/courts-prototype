@@ -97,7 +97,76 @@ p code, li code {
     }
 }
 
+// search form //
+
+#search-form {
+    display: flex;
+    // flex-direction: column;
+    gap: 15px;
+
+    button {
+      height: fit-content;
+      align-self: flex-end;
+    }
+}
+
 // filter tag x image location ///
+
+.moj-filter__header {
+    background-color: #cecece;
+    font-size: 0;
+    padding: 10px 20px;
+    text-align: justify;
+}
+
+.moj-filter__header [class^=govuk-heading-] {
+    margin-bottom: 0;
+}
+
+.moj-filter__selected {
+    background-color: #f3f3f3;
+    box-shadow: inset 0 0 0 1px #cecece;
+    padding: 20px;
+}
+
+.moj-filter-tags {
+    font-size: 0;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.moj-filter-tags li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.moj-filter__tag {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.moj-filter__tag {
+    background-color: #fff;
+    border: 1px solid #0b0c0c;
+    color: #0b0c0c;
+    display: inline-block;
+    font-family: GDS Transport, arial, sans-serif;
+    margin-top: 5px;
+    padding: 5px;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.moj-filter__tag:link, .moj-filter__tag:visited {
+    color: #0b0c0c;
+}
+
+.moj-filter__tag:hover {
+    background-color: #0b0c0c;
+    color: #fff;
+}
 
 .moj-filter__tag:after {
     background-image: url(/public/images/icon-tag-remove-cross.svg);
@@ -112,4 +181,10 @@ p code, li code {
 
 .moj-filter__tag:hover:after {
     background-image: url(/public/images/icon-tag-remove-cross-white.svg);
+}
+
+.moj-filter__options {
+    box-shadow: inset 0 0 0 1px #cecece;
+    margin-top: -1px;
+    padding: 20px;
 }
