@@ -1,0 +1,69 @@
+.hmpps-summary-card {
+  border: 1px solid govuk-colour('dark-grey');
+  box-shadow: 0 5px govuk-colour('mid-grey');
+  @include govuk-responsive-margin(4, 'bottom');
+
+  &__header {
+    background-color: govuk-colour('light-grey');
+    @include govuk-responsive-padding(3, 'left');
+    @include govuk-responsive-padding(3, 'right');
+    @include govuk-responsive-margin(3, 'bottom');
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    h3,
+    h2 {
+      line-height: 50px;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+
+  &__no-header {
+    padding-top: 15px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: right;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+
+  &__action {
+    list-style: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right: 1px solid $govuk-link-colour;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      border: 0;
+    }
+  }
+
+  &__body {
+    @include govuk-responsive-padding(3, 'left');
+    @include govuk-responsive-padding(3, 'right');
+  }
+
+  dl {
+    margin-bottom: 15px;
+  }
+
+  .govuk-summary-list__row:last-of-type {
+    border-bottom: none;
+  }
+
+  .card-subheading {
+    font-size: 21px;
+  }
+}

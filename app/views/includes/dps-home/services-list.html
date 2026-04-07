@@ -1,0 +1,38 @@
+<section id="homepage-services-section">
+  <div class="govuk-width-container">
+    <h2 id="homepage-services" class="govuk-heading-m">Services</h2>
+    
+    <div class="hmpps-services">
+
+    {% for service in data['dpsServices'] %}
+
+    
+
+    <div class="hmpps-service-item">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+        <div class="hmpps-service-item__header">
+            <a href="{{ service.url }}" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">
+                {{ service.title }}
+            </a>
+        </div>
+        <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">
+            {{ service.description }}
+        </p>
+    </div>
+    {% endfor %}
+        
+    </div>
+    </div>
+</section>
+
+<!-- <div class="hmpps-service-item">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+        <div class="hmpps-service-item__header">
+            <a href="#" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">
+                External movements
+            </a>
+        </div>
+        <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">
+            Add, edit and manage temporary absences.
+        </p>
+    </div> -->

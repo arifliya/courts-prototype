@@ -1,0 +1,53 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+
+</div>
+
+
+<div class="govuk-width-container  govuk-!-margin-top-8">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Court appearance saved for {{ data['name'] or 'the person' }}
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+          </div>
+        </div>
+       <p><a class="govuk-link" href="manage-prisoner-record.html">View and manage this court appearance</a></p>
+       <p><a class="govuk-link" href="enter-date-time.html">Add another court appearance for this prisoner</a></p>
+        <p><a class="govuk-link" href="search-for-prisoner.html">Add another court appearance for a different prisoner</a></p>
+        <p><a class="govuk-link" href="#">View court appearances in your establishment</a></p>
+        <p><a class="govuk-link" href="dps-home.html">Return to the DPS homepage</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <a href="#" class="govuk-back-link" id="back-link">Back</a>
+</div>
+</div>
+
+
+<div class="govuk-width-container">
+
+  <div class="mini-profile-inner">
+    <div class="mini-profile-left">
+      <img class="mini-profile-person-img" src="/public/images/prisoner-images/prisoner_5.jpg" alt="Image of Carroll, Jonathon">
+    </div>
+    <div class="mini-profile-right">
+      <ul class="mini-profile-info">
+        <li>
+          <p class="govuk-heading-s govuk-!-margin-bottom-1">
+            <a id="mini-profile-link" class="govuk-link govuk-link--no-visited-state" >{{ data['name'] or 'the person' }}</a>
+          </p>
+          <span class="govuk-body">A5046DZ</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span>
+          <span class="govuk-body">7 April 1993</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span>
+          <span class="govuk-body">Moorland (HMP &amp; YOI)</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span>
+          <span class="govuk-body">RECP</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <form action="/what-court" method="post">
+ 
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset govuk-!-margin-top-8">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading"><span class="govuk-caption-l">Create a Court appearance</span>
+        What type of court appearance is this?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="courtAppearance" name="appearanceType" type="radio" value="Court appearance">
+        <label class="govuk-label govuk-radios__label" for="courtAppearance">
+          Court appearance
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="videoLink" name="appearanceType" type="radio" value="Video link">
+        <label class="govuk-label govuk-radios__label" for="videoLink">
+          Video link
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+  
+
+ 
+
+
+
+ 
+    
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

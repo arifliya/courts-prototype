@@ -1,0 +1,95 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-body dps-homepage-container">
+
+<div class="dps-intro__container__wrapper">
+  <div class="govuk-width-container">
+    <div class="dps-intro__container govuk-body">
+      <img src="/public/images/dps-logo.svg" alt="DPS logo" />
+      <div class="dps-intro__text">
+        <h1 class="govuk-heading-l">Welcome to Digital Prison Services</h1>
+        <p class="govuk-heading-s">The modern replacement for NOMIS.</p>
+        <a href="">Find out more about DPS</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-search">
+  <div class="govuk-width-container">
+    <form method="post" action="/prisoner-search" novalidate="" autocomplete="off">
+      <fieldset class="govuk-fieldset">
+        <legend>
+          <h2 class="govuk-heading-m">Search for a prisoner</h2>
+        </legend>
+        <input type="hidden" name="_csrf" value="RBWNpDDz-e0b_Xv16igmYxc4Kuq5CRuih0bU">
+        <div class="govuk-form-group">
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-qa="local-global-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="search-type-local" name="searchType" type="radio" value="local" checked="">
+              <label class="govuk-label govuk-radios__label" for="search-type-local">
+                In {{ data['prisonName'] }}
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="search-type-global" name="searchType" type="radio" value="global">
+              <label class="govuk-label govuk-radios__label" for="search-type-global">
+                In any establishment (global)
+              </label>
+            </div>
+          </div>
+          </div>
+        <div class="govuk-form-group govuk-form-group--inline govuk-!-margin-bottom-3">
+          <div class="govuk-form-group govuk-form-group__item name-prisoner-number">
+            <label class="govuk-label" for="name">
+              Name or prison number
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text">
+          </div>
+          <div class="govuk-form-group govuk-form-group__item">
+            <label class="govuk-label" for="location">
+              Residential location
+            </label>
+            <select class="govuk-select" id="location" name="location">
+              <option value="RSI" selected="">All</option>
+              <option value="RSI-A">A</option>
+              <option value="RSI-B">B</option>
+              <option value="RSI-C">C</option>
+              <option value="RSI-D">D</option>
+              <option value="RSI-E">E</option>
+              <option value="RSI-F">F</option>
+              <option value="RSI-G">G</option>
+              <option value="RSI-R">R</option>
+              <option value="RSI-S">S</option>
+            </select>
+          </div>
+          <div class="govuk-form-group__button">
+            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+              Search
+            </button>
+          </div>
+        </div>
+        <div class="govuk-form-group">
+          <a data-qa="search-view-all-link" href="prisoner-search.html" class="govuk-body govuk-link govuk-link--no-visited-state">
+            All prisoners in {{ data['prisonName'] }}</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+  {% include "includes/dps-home/services-list.html" %}
+
+  <hr class="today-section-break--blue govuk-width-container">
+
+  {% include "includes/dps-home/todays-stats.html" %}
+
+
+</div>
+{% endblock %}

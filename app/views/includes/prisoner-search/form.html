@@ -1,0 +1,79 @@
+    <form novalidate="novalidate" class="prisoner-search__form" data-test="prisoner-search-form">
+      <div class="horizontal-form govuk-!-margin-bottom-3">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="keywords">
+            Enter name or prison number
+          </label>
+          <input class="govuk-input govuk-!-width-full" id="keywords" name="keywords" type="text"
+            data-test="prisoner-search-keywords">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="location">
+            Select location
+          </label>
+
+          <select class="govuk-select" id="location" name="location" data-test="prisoner-search-location">
+            <option value="PNI" selected="">Preston (HMP)</option>
+            <option value="PNI-A">A</option>
+            <option value="PNI-A1">A1</option>
+            <option value="PNI-A2">A2</option>
+            <option value="PNI-B">B</option>
+            <option value="PNI-C">C</option>
+            <option value="PNI-C1">C1</option>
+            <option value="PNI-C2">C2</option>
+            <option value="PNI-D">D</option>
+            <option value="PNI-F">F</option>
+            <option value="PNI-G">G</option>
+            <option value="PNI-H">H</option>
+          </select>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Search
+        </button>
+
+        <input type="hidden" name="feature" value="/">
+      </div>
+
+      <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details"
+        data-test="prisoner-search-alerts-container">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            View by alerts
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Select alerts to view
+              </legend>
+
+              <div class="govuk-checkboxes prisoner-search__alerts govuk-checkboxes--small js-prisoner-search-alerts"
+                data-test="prisoner-search-alerts" data-module="govuk-checkboxes">
+
+                {% for alert in data['dpsAlerts'] %}
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="alerts-{{ loop.index }}" name="alerts" type="checkbox" value="{{ alert.value }} ">
+                  <label class="govuk-label govuk-checkboxes__label" for="alerts-{{ loop.index }}">
+                    {{ alert.name }}
+                  </label>
+                </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+
+          <a href="#" class="govuk-link govuk-link--no-visited-state js-prisoner-search-clear-alerts"
+            data-test="prisoner-search-clear-alerts">
+            Clear selected alerts
+          </a>
+
+        </div>
+      </details>
+
+    </form>

@@ -1,0 +1,57 @@
+<div class="prisoner-search__results-list">
+  <table class="govuk-table" data-test="prisoner-search-results-table" data-module="moj-sortable-table">
+
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Picture</span></th>
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+        <th scope="col" class="govuk-table__header">Prison number</th>
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Location</th>
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Incentive level</th>
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Age </th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Relevant alerts</th>
+
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+    {% for prisoner in data['dpsMalePrisoners'] %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><img src="/public/images/prisoner-images/{{ prisoner.thumbnail }}"
+            alt="Image of {{ prisoner.name }}" class="prisoner-search__results-list__image" loading="lazy"
+            data-test="prisoner-image"></td>
+        <td class="govuk-table__cell" data-sort-value="Aalyle, Oblamonain"><a
+            href="./prisoner-profile"
+            class="govuk-link">{{ prisoner.name }}</a></td>
+        <td class="govuk-table__cell">{{ prisoner.prison_number }}</td>
+        <td class="govuk-table__cell">{{ prisoner.location }}</td>
+        <td class="govuk-table__cell">{{ prisoner.iep_status }}</td>
+        <td class="govuk-table__cell">{{ prisoner.age }}</td>
+        <td class="govuk-table__cell">
+
+          <ul class="alerts-list">
+            {% for alert in prisoner.alerts %}
+            <li class="alert-status alert-status--security">
+              {{ alert }}
+            </li>
+            {% endfor %}
+          </ul>
+
+          <span class="">
+
+          </span>
+        </td>
+      </tr>
+
+      {% endfor %}
+
+
+    </tbody>
+  </table>
+
+  <div aria-live="polite" role="status" aria-atomic="true" class="govuk-visually-hidden"></div>
+</div>

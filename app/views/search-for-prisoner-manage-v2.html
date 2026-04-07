@@ -1,0 +1,1514 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="dps-home.html">Digital Prison Services</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="court-appearance.html">Court appearances</a>
+      </li>
+    </ol>
+  </nav> 
+</div>
+</div>
+
+<div class="govuk-width-container govuk-!-margin-top-8">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-!-static-margin-bottom-6">
+        <span class="govuk-caption-l">View and manage court appearances</span>
+        <label for="searchTerm"><h1 class="govuk-heading-l">Search for a prisoner</h1></label>
+      </div>
+      </div>
+  </div>
+</div>
+      <!-- Search Component -->
+      <div class="moj-search block-background govuk-!-margin-bottom-8">
+        <div class="govuk-width-container">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form id="search-form">
+                <div class="govuk-form-group">
+                  <div id="searchTerm-hint" class="govuk-hint">
+                    Enter name or prison number. A maximum of 10 results can be returned.
+                  </div>
+                  <input class="govuk-input moj-search__input" id="searchTerm" name="searchTerm" type="text" aria-describedby="searchTerm-hint">
+                </div>
+                <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <div class="moj-filter" data-module="moj-filter">
+        <div class="moj-filter__header">
+          <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-m">Filter</h2>
+          </div>
+          <div class="moj-filter__header-action">
+          </div>
+        </div>
+        <div class="moj-filter__content">
+          <div class="moj-filter__selected">
+            <div class="moj-filter__selected-heading">
+              <div class="moj-filter__heading-title">
+                <h2 class="govuk-heading-m">Selected filters</h2>
+              </div>
+              <div class="moj-filter__heading-action">
+                <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+              </div>
+            </div>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Appearance type</h3>
+  <ul class="moj-filter-tags"></ul>
+
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Reason</h3>
+  <ul class="moj-filter-tags"></ul>
+
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
+  <ul class="moj-filter-tags"></ul>
+              
+            </ul>
+          </div>
+          <div class="moj-filter__options">
+            <button type="submit" class="govuk-button" data-module="govuk-button" id="applyFilters">
+              Apply filters
+            </button>
+            
+            <div class="moj-datepicker" data-module="moj-date-picker">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="date">
+                  Date from (earliest)
+                </label>
+                <div id="date-hint" class="govuk-hint">
+                  For example, 17/5/2024.
+                </div>
+                <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+              </div>
+            </div>
+            <br>
+            <div class="moj-datepicker" data-module="moj-date-picker">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="date2">
+                  Date to (latest)
+                </label>
+                <div id="date-hint2" class="govuk-hint">
+                  For example, 17/5/2024.
+                </div>
+                <input class="govuk-input moj-js-datepicker-input " id="date2" name="date2" type="text" aria-describedby="date-hint2" autocomplete="off">
+              </div>
+            </div>
+            <br>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Appearance type
+                </legend>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
+                    <label class="govuk-label govuk-checkboxes__label" for="type">
+                      In person
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
+                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                      Online
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      Reason
+    </legend>
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-1" name="reason" type="checkbox" value="court-appearance">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-1">Court Appearance</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-2" name="reason" type="checkbox" value="video-link">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-2">Video Link (Court Appearance)</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-3" name="reason" type="checkbox" value="trial">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-3">Trial</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-4" name="reason" type="checkbox" value="sentencing">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-4">Sentencing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-5" name="reason" type="checkbox" value="bail">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-5">Bail application</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-6" name="reason" type="checkbox" value="breach">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-6">Breach hearing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-7" name="reason" type="checkbox" value="plea">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-7">Plea and Directions Hearing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-8" name="reason" type="checkbox" value="appeal">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-8">Appeal Hearing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-9" name="reason" type="checkbox" value="remittal">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-9">Remittal Hearing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-10" name="reason" type="checkbox" value="newton">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-10">Newton Hearing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-11" name="reason" type="checkbox" value="committal">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-11">Committal Hearing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-12" name="reason" type="checkbox" value="custody-limit">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-12">Custody Time Limit</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-13" name="reason" type="checkbox" value="discharged">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-13">Discharged to Court</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="reason-14" name="reason" type="checkbox" value="production">
+        <label class="govuk-label govuk-checkboxes__label" for="reason-14">Production (Sentence/Civil Custody)</label>
+      </div>
+
+      <!-- Add more from the list as needed following this pattern -->
+      
+    </div>
+  </fieldset>
+</div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Status
+                </legend>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="completed">
+                    <label class="govuk-label govuk-checkboxes__label" for="status">
+                      Completed
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="expired">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                      Expired
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="scheduled">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                      Scheduled
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="govuk-grid-column-three-quarters">
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Sort by
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="newest" selected>Most recent</option>
+    <option value="oldest">Oldest to newest</option>
+  </select>
+</div>
+      <div class="moj-pagination">
+      <nav class="govuk-pagination moj-pagination__pagination " aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous
+            </span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-link--no-visited-state govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">
+              Next
+            </span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+      <p class="moj-pagination__results">Showing <span>1</span> to <span>10</span> of <span>22</span> total results</p>
+      </div>
+      
+      <p id="no-results-msg">There are no results based on your search.</p>
+    
+<div class="cards-container">
+  <!-- Record 1 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Harrison Jake - A8231BM</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--blue govuk-!-font-weight-regular">Approved</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-1">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-1" name="eventName" type="text" value="Manchester Crown Court, Crown Square, Manchester M60 1AS">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-1">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-1" name="date" type="text" autocomplete="off" value="15/04/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-1">
+        Time
+      </label>
+      <input class="govuk-input" id="time-1" name="eventName" type="text" value="09:30">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-1">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-1" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions" selected>Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-1">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-1" name="appearanceType">
+        <option value="In person" selected>In person</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Record 2 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Thompson Sarah - B1922LF</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--grey govuk-!-font-weight-regular">Expired</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-2">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-2" name="eventName" type="text" value="Liverpool Magistrates' Court, Derby Square, Liverpool L2 1AU">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-2">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-2" name="date" type="text" autocomplete="off" value="28/01/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-2">
+        Time
+      </label>
+      <input class="govuk-input" id="time-2" name="eventName" type="text" value="14:00">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-2">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-2" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application" selected>Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-2">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-2" name="appearanceType">
+        <option value="In person">In person</option>
+        <option value="Online" selected>Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Record 3 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Patel Arun - G4922PQ</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--green govuk-!-font-weight-regular">Completed</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-3">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-3" name="eventName" type="text" value="Leicester Crown Court, 90 Wellington St, Leicester LE1 6HG">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-3">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-3" name="date" type="text" autocomplete="off" value="10/03/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-3">
+        Time
+      </label>
+      <input class="govuk-input" id="time-3" name="eventName" type="text" value="11:15">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-3">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-3" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing" selected>Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-3">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-3" name="appearanceType">
+        <option value="In person" selected>In person</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+<!-- Record 4 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">O'Connor Liam - B8231XC</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--blue govuk-!-font-weight-regular">Approved</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-4">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-4" name="eventName" type="text" value="Leeds Combined Court Centre, The Headrow, Leeds LS1 3BG">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-4">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-4" name="date" type="text" autocomplete="off" value="18/06/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-4">
+        Time
+      </label>
+      <input class="govuk-input" id="time-4" name="eventName" type="text" value="10:30">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-4">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-4" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial" selected>Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-4">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-4" name="appearanceType">
+        <option value="In person" selected>In person</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Record 5 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Taylor Sophie - G1192DW</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--grey govuk-!-font-weight-regular">Expired</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-5">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-5" name="eventName" type="text" value="Bristol Crown Court, Small St, Bristol BS1 1DA">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-5">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-5" name="date" type="text" autocomplete="off" value="12/01/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-5">
+        Time
+      </label>
+      <input class="govuk-input" id="time-5" name="eventName" type="text" value="14:00">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-5">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-5" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing" selected>Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-5">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-5" name="appearanceType">
+        <option value="In person">In person</option>
+        <option value="Online" selected>Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Record 6 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Ahmed Yusuf - G2903KL</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--green govuk-!-font-weight-regular">Completed</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-6">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-6" name="eventName" type="text" value="Nottingham Crown Court, Canal St, Nottingham NG1 7EL">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-6">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-6" name="date" type="text" autocomplete="off" value="22/03/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-6">
+        Time
+      </label>
+      <input class="govuk-input" id="time-6" name="eventName" type="text" value="11:00">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-6">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-6" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced" selected>Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-6">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-6" name="appearanceType">
+        <option value="In person" selected>In person</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+<!-- Record 7 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Bennett Marcus - G0922TR</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--blue govuk-!-font-weight-regular">Approved</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-7">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-7" name="eventName" type="text" value="Sheffield Combined Court Centre, 50 West Bar, Sheffield S3 8PH">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-7">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-7" name="date" type="text" autocomplete="off" value="12/05/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-7">
+        Time
+      </label>
+      <input class="govuk-input" id="time-7" name="eventName" type="text" value="13:45">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-7">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-7" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing" selected>Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-7">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-7" name="appearanceType">
+        <option value="In person">In person</option>
+        <option value="Online" selected>Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Record 8 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Fisher Diane - G3309LK</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--grey govuk-!-font-weight-regular">Expired</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-8">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-8" name="eventName" type="text" value="Oxford Combined Court Centre, St Aldate's, Oxford OX1 1RL">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-8">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-8" name="date" type="text" autocomplete="off" value="14/02/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-8">
+        Time
+      </label>
+      <input class="govuk-input" id="time-8" name="eventName" type="text" value="09:00">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-8">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-8" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing" selected>Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-8">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-8" name="appearanceType">
+        <option value="In person" selected>In person</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Record 9 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Sloan Victoria - G8812OP</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--green govuk-!-font-weight-regular">Completed</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-9">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-9" name="eventName" type="text" value="Newcastle Upon Tyne Combined Court, NE1 3LA">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-9">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-9" name="date" type="text" autocomplete="off" value="30/03/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-9">
+        Time
+      </label>
+      <input class="govuk-input" id="time-9" name="eventName" type="text" value="15:30">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-9">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-9" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit">Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court" selected>Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-9">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-9" name="appearanceType">
+        <option value="In person" selected>In person</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+<!-- Record 10 -->
+<div class="card-group-custom">
+  <div class="card-item govuk-body govuk-!-font-weight-bold govuk-!-margin-0">
+    <a href="manage-prisoner-record.html" class="govuk-link govuk-link--no-visited-state">Dixon Marcus - G2210RD</a>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0"><span> </span><span> </span></div>
+  <div class="card-item govuk-body align-items-right govuk-!-margin-0">
+    <span class="govuk-tag govuk-tag--blue govuk-!-font-weight-regular">Approved</span>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="loc-10">
+        Court location
+      </label>
+      <input class="govuk-input" id="loc-10" name="eventName" type="text" value="Nottingham Crown Court, 70 Canal St, Nottingham NG1 7EL">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--s" for="date-10">
+          Date
+        </label>
+        <input class="govuk-input moj-js-datepicker-input " id="date-10" name="date" type="text" autocomplete="off" value="22/05/2025">
+      </div>
+    </div>
+  </div>  
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="time-10">
+        Time
+      </label>
+      <input class="govuk-input" id="time-10" name="eventName" type="text" value="11:45">
+    </div>
+  </div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+  <div class="govuk-form-group govuk-!-margin-bottom-0">
+  <label class="govuk-label govuk-label--s" for="reason-10">
+    Reason for appearance
+  </label>
+  <select class="govuk-select" id="reason-10" name="reason">
+    <option value="appeal-hearing">Appeal Hearing</option>
+    <option value="bail-application">Bail application</option>
+    <option value="breach-hearing">Breach hearing</option>
+    <option value="committal-hearing">Committal Hearing</option>
+    <option value="cond-release-extended">Cond Release Extended Sentence CJA 2003</option>
+    <option value="court-appearance">Court Appearance</option>
+    <option value="court-appearance-police">Court Appearance - Police Product Order</option>
+    <option value="court-review">Court Review</option>
+    <option value="custody-time-limit" selected>Custody Time Limit</option>
+    <option value="discharge-to-court-appeal">Discharge to Court on Appeal</option>
+    <option value="discharged-to-court">Discharged to Court</option>
+    <option value="expedited-breach-hearing">Expedited Breach Hearing</option>
+    <option value="newton-hearing">Newton Hearing</option>
+    <option value="not-to-appear">Not to Appear Court Date (Diary Only)</option>
+    <option value="plea-and-directions">Plea and Directions Hearing</option>
+    <option value="production-sentence">Production (Sentence/Civil Custody)</option>
+    <option value="production-unsentenced">Production of Unsentenced Inmate at Court</option>
+    <option value="remittal-hearing">Remittal Hearing</option>
+    <option value="sentencing">Sentencing</option>
+    <option value="trial">Trial</option>
+    <option value="video-link-appeal">Video Link Appeal</option>
+    <option value="video-link-bail">Video Link Bail Applicaton</option>
+    <option value="video-link-breach">Video Link Breach Hearing</option>
+    <option value="video-link-civil">Video Link Civil Hearing</option>
+    <option value="video-link-committal">Video Link Committal Hearing</option>
+    <option value="video-link-court-appearance">Video Link (Court Appearance)</option>
+    <option value="video-link-court-review">Video Link Court Review</option>
+    <option value="video-link-expedited-breach">Video Link Expedited Breach Hearing</option>
+    <option value="video-link-newton">Video Link Newton Hearing</option>
+    <option value="video-link-plea">Video Link Plea and Direction Hearing</option>
+    <option value="video-link-police">Video Link Police Production</option>
+    <option value="video-link-proceeds">Video Link Proceeds of Crime Hearing</option>
+    <option value="video-link-production-sentencing">Video Link Production (Sentencing)</option>
+    <option value="video-link-production-unsentenced">Video Link Production (Unsent.)</option>
+    <option value="video-link-remittal">Video Link Remittal Hearing</option>
+    <option value="video-link-witness">Video Link Witness Production</option>
+    <option value="witness">Witness</option>
+  </select>
+</div>
+</div>
+  <div class="card-item govuk-body govuk-!-margin-0">
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      <label class="govuk-label govuk-label--s" for="type-10">
+        Type of appearance
+      </label>
+      <select class="govuk-select" id="type-10" name="appearanceType">
+        <option value="In person">In person</option>
+        <option value="Online" selected>Online</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const applyBtn = document.getElementById('applyFilters');
+  const searchForm = document.getElementById('search-form');
+  const sortSelect = document.getElementById('sort');
+  const clearBtn = document.querySelector('.moj-filter__heading-action a');
+  const cards = Array.from(document.querySelectorAll('.card-group-custom'));
+  const selectedFiltersContainer = document.querySelector('.moj-filter__selected');
+  const cardsContainer = document.querySelector('.cards-container');
+
+  // Pagination elements
+  const paginationContainer = document.querySelector('.moj-pagination');
+  const paginationInfo = document.querySelector('.moj-pagination__results');
+  const prevBtn = document.querySelector('.govuk-pagination__prev');
+  const nextBtn = document.querySelector('.govuk-pagination__next');
+  const pageItems = document.querySelectorAll('.govuk-pagination__item');
+
+  let currentPage = 1;
+  const resultsPerPage = 10;
+  let filteredCards = [];
+
+  const parseInputDate = (dateStr) => {
+    if (!dateStr) return null;
+    const [day, month, year] = dateStr.split('/');
+    const d = new Date(year, month - 1, day);
+    d.setHours(0, 0, 0, 0);
+    return d;
+  };
+
+  /**
+   * Updates tags for all 3 categories (Appearance type, Reason, Status)
+   */
+  const updateTags = () => {
+    if (!selectedFiltersContainer) return;
+    
+    const tagLists = selectedFiltersContainer.querySelectorAll('.moj-filter-tags');
+    const headings = selectedFiltersContainer.querySelectorAll('.govuk-heading-s');
+
+    // Clear all existing tag lists
+    tagLists.forEach(list => list.innerHTML = '');
+
+    const createTag = (checkbox, container) => {
+      if (!container) return;
+      const labelText = checkbox.closest('.govuk-checkboxes__item').querySelector('label').textContent.trim();
+      const li = document.createElement('li');
+      li.innerHTML = `<a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove</span> ${labelText}</a>`;
+      
+      li.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+        checkbox.checked = false;
+        runAllFilters(); 
+      });
+      container.appendChild(li);
+    };
+
+    // 1. Generate tags for each group based on index
+    // Group 0: Appearance Type
+    document.querySelectorAll('input[name="type"]:checked').forEach(cb => createTag(cb, tagLists[0]));
+    // Group 1: Reason
+    document.querySelectorAll('input[name="reason"]:checked').forEach(cb => createTag(cb, tagLists[1]));
+    // Group 2: Status
+    document.querySelectorAll('input[name="status"]:checked').forEach(cb => createTag(cb, tagLists[2]));
+
+    // 2. Toggle headings visibility based on whether their list has tags
+    headings.forEach((heading, index) => {
+      if (tagLists[index]) {
+        heading.style.display = tagLists[index].children.length > 0 ? 'block' : 'none';
+      }
+    });
+
+    // 3. Overall container visibility (show if tags or dates exist)
+    const hasDate = document.getElementById('date').value || document.getElementById('date2').value;
+    const anyTags = Array.from(tagLists).some(list => list.children.length > 0);
+    selectedFiltersContainer.style.display = (anyTags || hasDate) ? 'block' : 'none';
+  };
+
+  /**
+   * Main filtering and search function
+   */
+  const runAllFilters = (e) => {
+    if (e) e.preventDefault();
+    updateTags();
+
+    const query = document.getElementById('searchTerm').value.trim().toLowerCase();
+    const sortOrder = sortSelect.value;
+    const dateFrom = parseInputDate(document.getElementById('date').value);
+    const dateTo = parseInputDate(document.getElementById('date2').value);
+
+    const getChecked = (name) => Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+      .map(cb => cb.closest('.govuk-checkboxes__item').querySelector('label').textContent.trim().toLowerCase());
+
+    const selTypes = getChecked('type');
+    const selReasons = getChecked('reason');
+    const selStatuses = getChecked('status');
+
+    filteredCards = cards.filter(card => {
+      const cardName = card.querySelector('.card-item a').textContent.toLowerCase();
+      const cardStatus = card.querySelector('.govuk-tag').textContent.trim().toLowerCase();
+      const cardReason = card.querySelector('select[name="reason"]').value.toLowerCase();
+      const cardType = card.querySelector('select[name="appearanceType"]').value.toLowerCase();
+      const cardDate = parseInputDate(card.querySelector('.moj-js-datepicker-input').value);
+
+      const matchesSearch = query === "" || cardName.includes(query);
+      const matchesType = selTypes.length === 0 || selTypes.includes(cardType);
+      const matchesStatus = selStatuses.length === 0 || selStatuses.includes(cardStatus);
+      const matchesReason = selReasons.length === 0 || selReasons.includes(cardReason);
+      const matchesDate = (!dateFrom || cardDate >= dateFrom) && (!dateTo || cardDate <= dateTo);
+
+      return matchesSearch && matchesType && matchesStatus && matchesReason && matchesDate;
+    });
+
+    // Sort result set
+    filteredCards.sort((a, b) => {
+      const dA = parseInputDate(a.querySelector('.moj-js-datepicker-input').value);
+      const dB = parseInputDate(b.querySelector('.moj-js-datepicker-input').value);
+      return sortOrder === 'newest' ? dB - dA : dA - dB;
+    });
+
+    renderResults();
+  };
+
+  const renderResults = () => {
+    const totalResults = filteredCards.length;
+    const totalPages = Math.ceil(totalResults / resultsPerPage);
+    if (currentPage > totalPages) currentPage = 1;
+
+    cards.forEach(c => c.style.display = 'none');
+    const startIdx = (currentPage - 1) * resultsPerPage;
+    const endIdx = Math.min(startIdx + resultsPerPage, totalResults);
+    filteredCards.slice(startIdx, endIdx).forEach(c => c.style.display = '');
+
+    let noResultsMsg = document.getElementById('no-results-msg');
+    if (totalResults === 0) {
+      if (!noResultsMsg) {
+        noResultsMsg = document.createElement('p');
+        noResultsMsg.id = 'no-results-msg';
+        noResultsMsg.className = 'govuk-body govuk-!-font-weight-bold';
+        noResultsMsg.textContent = 'No matching prisoners found.';
+        if (cardsContainer) cardsContainer.appendChild(noResultsMsg);
+      }
+      paginationContainer.style.display = 'none';
+    } else {
+      if (noResultsMsg) noResultsMsg.remove();
+      paginationContainer.style.display = 'block';
+      paginationInfo.innerHTML = `Showing <span>${totalResults === 0 ? 0 : startIdx + 1}</span> to <span>${endIdx}</span> of <span>${totalResults}</span> total results`;
+      
+      pageItems.forEach(item => {
+        const pageNum = parseInt(item.querySelector('a').textContent.trim());
+        item.classList.toggle('govuk-pagination__item--current', pageNum === currentPage);
+        item.style.display = pageNum > totalPages ? 'none' : 'inline-block';
+      });
+
+      prevBtn.style.display = currentPage === 1 ? 'none' : 'inline-block';
+      nextBtn.style.display = currentPage === totalPages || totalPages === 0 ? 'none' : 'inline-block';
+    }
+  };
+
+  // Listeners
+  if (sortSelect) sortSelect.addEventListener('change', runAllFilters);
+  if (applyBtn) applyBtn.addEventListener('click', () => { currentPage = 1; runAllFilters(); });
+  if (searchForm) searchForm.addEventListener('submit', (e) => { e.preventDefault(); currentPage = 1; runAllFilters(); });
+  
+  if (clearBtn) {
+    clearBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('searchTerm').value = '';
+      document.getElementById('date').value = '';
+      document.getElementById('date2').value = '';
+      // Reset all checkbox groups
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      sortSelect.selectedIndex = 0;
+      currentPage = 1;
+      runAllFilters();
+    });
+  }
+
+  // Pagination navigation
+  pageItems.forEach(item => {
+    item.querySelector('a').addEventListener('click', (e) => {
+      e.preventDefault();
+      currentPage = parseInt(e.target.textContent.trim());
+      renderResults();
+      window.scrollTo(0, 0);
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.querySelector('a').addEventListener('click', (e) => {
+      e.preventDefault();
+      if (currentPage > 1) { currentPage--; renderResults(); window.scrollTo(0, 0); }
+    });
+  }
+  if (nextBtn) {
+    nextBtn.querySelector('a').addEventListener('click', (e) => {
+      e.preventDefault();
+      if (currentPage < Math.ceil(filteredCards.length / resultsPerPage)) { currentPage++; renderResults(); window.scrollTo(0, 0); }
+    });
+  }
+
+  runAllFilters();
+});
+
+//////// sorting code below /////
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sortSelect = document.getElementById('sort');
+  // This is the parent container holding all your card groups
+  const mainContainer = document.querySelector('.cards-container'); 
+
+  const parseUKDate = (dateStr) => {
+    if (!dateStr) return new Date(0); // Handle empty dates
+    const [day, month, year] = dateStr.split('/');
+    return new Date(`${year}-${month}-${day}`);
+  };
+
+  sortSelect.addEventListener('change', () => {
+    // Select all the top-level card groups
+    const cards = Array.from(document.querySelectorAll('.card-group-custom'));
+    const sortValue = sortSelect.value;
+
+    cards.sort((a, b) => {
+      // Find the specific date input within each card group
+      const dateAStr = a.querySelector('.moj-js-datepicker-input').value;
+      const dateBStr = b.querySelector('.moj-js-datepicker-input').value;
+
+      const dateA = parseUKDate(dateAStr);
+      const dateB = parseUKDate(dateBStr);
+
+      return sortValue === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+
+    // Re-append to the container to update the visual order
+    cards.forEach(card => mainContainer.appendChild(card));
+  });
+});
+
+
+
+</script>
+
+{% endblock %}

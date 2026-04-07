@@ -1,0 +1,62 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="dps-home.html">Digital Prison Services</a>
+      </li>
+    </ol>
+  </nav> 
+</div>
+</div>
+
+<div class="govuk-width-container"><h1 class="govuk-heading-l govuk-!-margin-bottom-6 govuk-!-margin-top-8">External movements</h1></div>
+
+<div class="homepage-card-background">
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="card-group govuk-grid-row">
+
+              
+                <div class="govuk-grid-column-one-third card-group__item">
+                  <div class="card card--clickable">
+                    <h2 class="govuk-heading-m card__heading">
+                      <a class="govuk-link govuk-link--no-visited-state card__link" href="temporary-absences.html">Add and manage temporary absences</a>
+                    </h2>
+                    <p class="govuk-body card__description">Add new temporary absences and view, approve or cancel existing absences.</p>
+                  </div>
+                </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

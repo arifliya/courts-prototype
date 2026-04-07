@@ -1,0 +1,904 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Prisoner Profile" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps govuk-body' %}
+
+{% block beforeContent %}
+  <div class="prisoner-profile-breadcrumbs govuk-!-display-none-print">
+
+    <div class="prisoner-profile-breadcrumbs__search">
+      <a href="/prisoner-search" class="govuk-link govuk-link--no-visited-state" data-qa="back-link">
+        View most recent search
+      </a>
+    </div>
+
+    <div class="prisoner-profile-breadcrumbs__breadcrumbs">
+      <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+        <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/dps-home">Digital Prison Services</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+    <div data-test="hmpps-profile-banner-partial" class="hmpps-profile-banner">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          {% include "includes/prisoner-profile/profile-banner.html" %}
+          {% include "includes/prisoner-profile/tab-links.html" %}
+         </div>
+      </div>
+    </div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <h1>Overview</h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row hmpps-three-quarters-responsive">
+      <div class="govuk-grid-column-three-quarters hmpps-full-width-print">
+
+        <div class="govuk-grid-row">
+          <section class="govuk-grid-column-full" aria-label="Status List">
+
+            <ul class="hmpps-status-list">
+
+              <li class="hmpps-status hmpps-status--success">
+                <p>In Preston (HMP)</p>
+
+              </li>
+
+            </ul>
+
+          </section>
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" data-qa="overview-mini-summary-group-a">
+            <div class="govuk-grid-row hmpps-miniSummaryWrapper" data-qa="mini-summary-list-macro">
+
+              <div class="govuk-grid-column-one-third">
+
+                <div class="hmpps-summary-card " id="">
+
+                  <div class="hmpps-summary-card__header" data-qa="summary-header">
+                    <h2>Money</h2>
+
+                  </div>
+
+                  <div class="hmpps-summary-card__body">
+                    <div class="govuk-grid-row card-body ">
+                      <div class="govuk-grid-column-full">
+
+                        <p class="govuk-body card-label">
+                          Spends
+                        </p>
+
+
+                        <p class="govuk-body hmpps-mini-card__big ">
+                          £1,210.11
+                        </p>
+                        <hr
+                          class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-3">
+
+                        <p class="govuk-body card-label">
+                          Private cash
+                        </p>
+                        <p class="govuk-body hmpps-mini-card__big">
+
+                          £10.00
+
+                        </p>
+
+                        <p class="govuk-body hmpps-mini-card__link">
+                          <a href="#"
+                            class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+                            Transactions and savings
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="govuk-grid-column-one-third">
+
+                <div class="hmpps-summary-card " id="">
+
+                  <div class="hmpps-summary-card__header" data-qa="summary-header">
+                    <h2>Visits</h2>
+
+                  </div>
+
+                  <div class="hmpps-summary-card__body">
+                    <div class="govuk-grid-row card-body ">
+                      <div class="govuk-grid-column-full">
+
+                        <p class="govuk-body card-label">
+                          Next visit date
+                        </p>
+
+
+                        <p class="govuk-body hmpps-mini-card__small hmpps-mini-card__filler">
+                          None scheduled
+                        </p>
+                        <hr
+                          class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-3">
+
+                        <p class="govuk-body card-label">
+                          Remaining visits
+                        </p>
+                        <p class="govuk-body hmpps-mini-card__big">
+
+                          25
+
+                        </p>
+
+
+                        <p class="govuk-body hmpps-mini-card__sub-text">
+                          Including 3 privileged visits
+                        </p>
+                        <p class="govuk-body hmpps-mini-card__link">
+                          <a href="#"
+                            class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+                            Visits details
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="govuk-grid-column-one-third">
+
+                <div class="hmpps-summary-card " id="">
+
+                  <div class="hmpps-summary-card__header" data-qa="summary-header">
+                    <h2>Non-associations</h2>
+
+                  </div>
+
+                  <div class="hmpps-summary-card__body">
+                    <div class="govuk-grid-row card-body ">
+                      <div class="govuk-grid-column-full">
+
+                        <p class="govuk-body card-label">
+                          In Preston (HMP)
+                        </p>
+
+
+                        <p class="govuk-body hmpps-mini-card__big ">
+                          0
+                        </p>
+                        <hr
+                          class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-3">
+
+                        <p class="govuk-body card-label">
+                          In other establishments
+                        </p>
+                        <p class="govuk-body hmpps-mini-card__big">
+
+                          3
+
+                        </p>
+
+                        <p class="govuk-body hmpps-mini-card__link">
+                          <a href="#"
+                            class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+                            Non-associations
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-row hmpps-miniSummaryWrapper">
+
+
+          <div data-qa="visible-external-contacts" class="govuk-grid-column-one-third">
+
+
+
+            <div class="hmpps-summary-card " id="external-contacts">
+
+              <div class="hmpps-summary-card__header" data-qa="summary-header">
+                <h2>External contacts</h2>
+
+              </div>
+
+              <div class="hmpps-summary-card__body">
+
+
+                <dl class="govuk-summary-list external-contacts-summary">
+                  <div class="govuk-summary-list__row">
+                    <div class="govuk-!-padding-bottom-3 govuk-!-padding-top-2">
+                      <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-2" data-qa="external-contacts-social">
+                        Social</dt>
+                      <dd class="govuk-!-font-size-36 govuk-!-margin-left-0 govuk-!-margin-bottom-2"
+                        data-qa="external-contacts-social-count">2</dd>
+                    </div>
+                  </div>
+                  <div class="govuk-summary-list__row--no-border">
+                    <div class="govuk-!-padding-top-3">
+                      <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-2" data-qa="external-contacts-official">
+                        Official</dt>
+                      <dd class="govuk-!-font-size-36 govuk-!-margin-left-0 govuk-!-margin-bottom-4"
+                        data-qa="external-contacts-official-count">3</dd>
+                      <dd class="govuk-!-margin-left-0" data-qa="external-contacts-link"><a
+                          href="#"
+                          class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">Social and official
+                          contacts</a></dd>
+                    </div>
+                  </div>
+                </dl>
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <div class="hmpps-full-width-print govuk-grid-column-two-thirds">
+
+
+
+            <div class="hmpps-summary-card " id="">
+
+              <div class="hmpps-summary-card__header" data-qa="summary-header">
+                <h2>Staff contacts</h2>
+
+              </div>
+
+              <div class="hmpps-summary-card__body">
+                <div class="govuk-grid-row staff-contacts-card" data-qa="staff-contacts">
+                  <div class="govuk-grid-column-full">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                          Key worker
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+                          <p class="govuk-body" data-qa="keyworker-details">
+
+
+                            Not allocated
+
+                            - No previous session
+
+
+                          </p>
+                        </dd>
+
+                      </div>
+
+
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                          Prison Offender Manager
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+                          Not assigned
+                        </dd>
+
+                      </div>
+
+
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                          Co-working Prison Offender Manager
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+                          Not assigned
+                        </dd>
+
+                      </div>
+
+
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                          Community Offender Manager
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+                          Not assigned
+                        </dd>
+
+                      </div>
+
+
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                          Resettlement Worker
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-width-one-half">
+                          Not assigned
+                        </dd>
+
+                      </div>
+
+
+                    </dl>
+
+                  </div>
+                </div>
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-body">
+                      <a class="govuk-link--no-visited-state govuk-!-display-none-print"
+                        href="#">Professional contacts</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="govuk-grid-row hmpps-miniSummaryWrapper">
+
+          <div class="govuk-grid-column-one-half" data-qa="adjudications-summary">
+
+            <div class="hmpps-summary-card " id="">
+
+              <div class="hmpps-summary-card__header" data-qa="summary-header">
+                <h2>Adjudications</h2>
+
+              </div>
+
+              <div class="hmpps-summary-card__body">
+                <div class="govuk-grid-row card-body ">
+                  <div class="govuk-grid-column-full">
+
+                    <p class="govuk-body card-label">
+                      Proven in last 3 months
+                    </p>
+
+
+                    <p class="govuk-body hmpps-mini-card__big ">
+                      0
+                    </p>
+                    <hr
+                      class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-3">
+
+                    <p class="govuk-body card-label">
+                      Active
+                    </p>
+                    <p class="govuk-body hmpps-mini-card__small">
+
+                      No active punishments
+
+                    </p>
+
+                    <p class="govuk-body hmpps-mini-card__link">
+                      <a href="#"
+                        class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+                        Adjudication history
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="govuk-grid-column-one-half">
+
+            <div class="mini-card  mini-card--incentives">
+
+              <div class="mini-card__heading">
+                <h2>Incentives</h2>
+              </div>
+
+              <div class="mini-card__body card-body">
+
+                <p class="mini-card__label">Since last review</p>
+
+
+                <div class="mini-card__item ">
+                  Positive behaviours: 1
+                </div>
+
+                <div class="mini-card__item govuk-!-margin-bottom-3">
+                  Negative behaviours: 0
+                </div>
+
+                <div class="mini-card__item hmpps-secondary-text">
+                  Next review by: 18/07/2017
+                </div>
+
+                <div class="mini-card__item hmpps-red-text govuk-!-font-weight-bold">
+                  2942 days overdue
+                </div>
+
+              </div>
+
+              <div class="mini-card__link">
+                <a href="#"
+                  class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+                  Incentive level details
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" data-qa="overview-mini-summary-group-b">
+            <div class="mini-card-wrapper" data-qa="mini-summary-list-macro">
+
+              <div class="mini-card  mini-card--categories">
+
+                <div class="mini-card__heading">
+                  <h2>Category</h2>
+                </div>
+
+                <div class="mini-card__body card-body">
+
+
+                  <div class="mini-card__item hmpps-mini-card__big">
+                    B
+                  </div>
+
+                  <div class="mini-card__item hmpps-secondary-text">
+                    Next review: 29/07/2017
+                  </div>
+
+                </div>
+
+                <div class="mini-card__link">
+                  <a href="#"
+                    class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+                    Manage category
+                  </a>
+                </div>
+
+              </div>
+
+
+              <div class="mini-card  mini-card--csra">
+
+                <div class="mini-card__heading">
+                  <h2>CSRA</h2>
+                </div>
+
+                <div class="mini-card__body card-body">
+
+
+                  <div class="mini-card__item ">
+                    Standard
+                  </div>
+
+                  <div class="mini-card__item hmpps-secondary-text">
+                    Last review: 30/12/2015
+                  </div>
+
+                </div>
+
+                <div class="mini-card__link">
+                  <a href="#"
+                    class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+                    CSRA history
+                  </a>
+                </div>
+
+              </div>
+
+
+
+              <div class="mini-card  mini-card--csip">
+
+                <div class="mini-card__heading">
+                  <h2>CSIP</h2>
+                </div>
+
+                <div class="mini-card__body card-body">
+
+
+                  <div class="mini-card__item ">
+                    No CSIP history
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+
+
+
+
+            <div class="hmpps-summary-card " id="">
+
+              <div class="hmpps-summary-card__header" data-qa="summary-header">
+                <h2>Personal</h2>
+
+              </div>
+
+              <div class="hmpps-summary-card__body">
+                <div class="govuk-grid-row" data-qa="personal-details">
+                  <div class="govuk-grid-column-one-half hmpps-full-width-print">
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="date-of-birth-row">
+                        <dt class="govuk-summary-list__key" data-qa="date-of-birth-key">Date of birth</dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="date-of-birth">09/05/1986</dd>
+
+                      </div>
+
+
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="age-row">
+                        <dt class="govuk-summary-list__key" data-qa="age-key">Age</dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="age">39 years, 2 months</dd>
+
+                      </div>
+
+
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="nationality-row">
+                        <dt class="govuk-summary-list__key" data-qa="nationality-key">Nationality</dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="nationality">British</dd>
+
+                      </div>
+
+
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="spoken-language-row">
+                        <dt class="govuk-summary-list__key" data-qa="spoken-language-key">Spoken language</dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="spoken-language">Not entered</dd>
+
+                      </div>
+
+
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="religion-or-belief-row">
+                        <dt class="govuk-summary-list__key" data-qa="religion-or-belief-key">Religion, faith or belief
+                        </dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="religion-or-belief">No Religion</dd>
+
+                      </div>
+
+
+                    </dl>
+                  </div>
+                  <div class="govuk-grid-column-one-half hmpps-full-width-print">
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="ethnic-group-row">
+                        <dt class="govuk-summary-list__key" data-qa="ethnic-group-key">Ethnic group</dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="ethnic-group">White:
+                          Eng./Welsh/Scot./N.Irish/British (W1)</dd>
+
+                      </div>
+
+
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="cro-number-row">
+                        <dt class="govuk-summary-list__key" data-qa="cro-number-key">CRO number</dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="cro-number">173510/00X</dd>
+
+                      </div>
+
+
+
+
+
+                      <div class="govuk-summary-list__row " data-qa="pnc-number-row">
+                        <dt class="govuk-summary-list__key" data-qa="pnc-number-key">PNC number</dt>
+
+                        <dd class="govuk-summary-list__value" data-qa="pnc-number">00/36147P</dd>
+
+                      </div>
+
+
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <div data-qa="visible-overview-schedule" class="">
+
+
+              <div class="hmpps-summary-card " id="">
+
+                <div class="hmpps-summary-card__header" data-qa="summary-header">
+                  <h2>Today's schedule</h2>
+
+                </div>
+
+                <div class="hmpps-summary-card__body">
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-third" data-qa="morning-schedule">
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Morning</p>
+
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                          <p class="govuk-body" data-qa="schedule-item">Wing PID Rep<br>08:30 to 11:45</p>
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                    <div class="govuk-grid-column-one-third" data-qa="afternoon-schedule">
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Afternoon</p>
+
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                          <p class="govuk-body" data-qa="schedule-item">Wing PID Rep<br>13:30 to 16:45</p>
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                    <div class="govuk-grid-column-one-third" data-qa="evening-schedule">
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Evening</p>
+
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                          <p class="govuk-body" data-qa="schedule-item">Wing PID Rep<br>17:30 to 18:30</p>
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      <p class="govuk-body">
+                        <a href="#"
+                          class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">7 day schedule</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" data-qa="overview-offences">
+
+
+
+            <div class="hmpps-summary-card " id="">
+
+              <div class="hmpps-summary-card__header" data-qa="summary-header">
+                <h2>Offences and release dates</h2>
+
+              </div>
+
+              <div class="hmpps-summary-card__body">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+                    <p data-qa="overview-main-offence"
+                      class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-1">Main
+                      offence</p>
+                    <p>
+                      Section 18 - grievous bodily harm with intent
+                    </p>
+                    <hr class="govuk-section-break govuk-section-break--visible">
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-4 govuk-!-margin-bottom-1">
+                      Imprisonment status</p>
+                    <p> Recalled to Prison from Parole (Non HDC)</p>
+
+
+                    <hr class="govuk-section-break govuk-section-break--visible">
+                    <p data-qa="overview-confirmed-release-label"
+                      class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-4 govuk-!-margin-bottom-1">Confirmed
+                      release date</p>
+                    <p data-qa="overview-confirmed-release"> 7 December 2018</p>
+                    <div class="govuk-inset-text">
+                      This person is currently due to be released from prison on this date.
+                    </div>
+
+
+                    <hr class="govuk-section-break govuk-section-break--visible">
+                    <p class="govuk-body govuk-!-margin-top-4">
+                      <a data-qa="overview-offences-view-all" href="#"
+                        class="govuk-link govuk-link--no-visited-state govuk-!-display-none-print">
+
+                        Offences, sentences and release dates
+
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+      <div class="govuk-grid-column-one-quarter govuk-!-display-none-print">
+
+        <div data-qa="visible-overview-side-bar" class="">
+
+
+          <div class="govuk-grid-row">
+            <aside class="govuk-grid-column-full">
+
+              <div class="hmpps-actions-block govuk-!-margin-bottom-5">
+                <h2 class="govuk-heading-m">Actions</h2>
+                <ul class="hmpps-actions-block__list">
+
+                  <li>
+                    <img src="/public/images/add-case-note.svg" role="presentation" alt="" width="40px" height="40px">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state"
+                      data-qa="add-case-note-action-link" referrerpolicy="no-referrer-when-downgrade">Add case note</a>
+                  </li>
+
+                  <li>
+                    <img src="/public/images/add-appointment.svg" role="presentation" alt="" width="40px" height="40px">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state"
+                      data-qa="add-appointment-action-link" referrerpolicy="no-referrer-when-downgrade">Add
+                      appointment</a>
+                  </li>
+
+                  <li>
+                    <img src="/public/images/report-use-of-force.svg" role="presentation" alt="" width="40px"
+                      height="40px">
+                    <a href="#"
+                      class="govuk-link govuk-link--no-visited-state" data-qa="report-use-of-force-action-link"
+                      referrerpolicy="no-referrer-when-downgrade">Report use of force</a>
+                  </li>
+
+                  <li>
+                    <img src="/public/images/manage-category.svg" role="presentation" alt="" width="40px" height="40px">
+                    <a href="#"
+                      class="govuk-link govuk-link--no-visited-state" data-qa="manage-category-action-link"
+                      referrerpolicy="no-referrer-when-downgrade">Manage category</a>
+                  </li>
+
+                  <li>
+                    <img src="/public/images/make-csip-referral.svg" role="presentation" alt="" width="40px"
+                      height="40px">
+                    <a href="#"
+                      class="govuk-link govuk-link--no-visited-state" data-qa="make-csip-referral-action-link"
+                      referrerpolicy="no-referrer-when-downgrade">Make CSIP referral</a>
+                  </li>
+
+                </ul>
+              </div>
+
+            </aside>
+          </div>
+          <div class="govuk-grid-row">
+            <aside class="govuk-grid-column-full">
+
+
+
+              <div class="hmpps-summary-card " id="">
+
+                <div class="hmpps-summary-card__body">
+                  <div class="govuk-grid-row hmpps-more-info-block">
+                    <div class="govuk-grid-column-full">
+                      <h2>More information</h2>
+                      <ul>
+                        <li><a href="#"
+                            class="govuk-link govuk-link--no-visited-state"
+                            data-qa="probation-documents-info-link">Probation documents</a>
+                          </li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </aside>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+{% endblock %}

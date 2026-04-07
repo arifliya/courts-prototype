@@ -1,0 +1,112 @@
+[
+  {
+    "title": "External movements",
+    "description": "Add, edit and manage temporary absences.",
+    "url": "external-movements.html"
+  },
+  {
+    "title": "Court appearances",
+    "description": "Schedule, view and manage a prisoner’s court appearance, for both in‑person hearings and video links",
+    "url": "court-appearance.html"
+  },
+  {
+    "title": "Activities, unlock and attendance",
+    "description": "Create and edit activities. Allocate people and edit allocations. Log applications and manage waitlists. Print unlock lists and record activity attendance.",
+    "url": "#"
+  },
+  {
+    "title": "Adjudications",
+    "description": "Place a prisoner on report after an incident, view reports and manage adjudications.",
+    "url": "#"
+  },
+  {
+    "title": "Appointments scheduling and attendance",
+    "description": "Create, manage and edit appointments. Print movement slips. Record appointment attendance.",
+    "url": "#"
+  },
+  {
+    "title": "Categorisation",
+    "description": "View a prisoner\u2019s category and complete either a first time categorisation or a recategorisation.",
+    "url": "#"
+  },
+  {
+    "title": "Change someone\u2019s cell",
+    "description": "Complete a cell move and view the 7 day history of all cell moves completed in your establishment.",
+    "url": "#"
+  },
+  {
+    "title": "Check my diary",
+    "description": "View your prison staff detail (staff rota) from home.",
+    "url": "#"
+  },
+  {
+    "title": "Check Rule 39 mail",
+    "description": "Scan barcodes on mail from law firms and other approved senders.",
+    "url": "#"
+  },
+  {
+    "title": "CSIP",
+    "description": "View and manage the Challenge, Support and Intervention Plan (CSIP) caseload.",
+    "url": "#"
+  },
+  {
+    "title": "Establishment roll check",
+    "description": "View the roll broken down by residential unit and see who is arriving and leaving.",
+    "url": "#"
+  },
+  {
+    "title": "Global search",
+    "description": "Search for someone in any establishment, or who has been released.",
+    "url": "#"
+  },
+  {
+    "title": "Historical Prisoner Application",
+    "description": "This service allows users to view historical prisoner information.",
+    "url": "#"
+  },
+  {
+    "title": "Incentives",
+    "description": "Manage incentive level reviews by residential location and view incentives data charts.",
+    "url": "#"
+  },
+  {
+    "title": "Intelligence management service",
+    "description": "Manage and view intelligence reports",
+    "url": "#"
+  },
+  {
+    "title": "Key workers",
+    "description": "Allocate key workers to prisoners and manage key work in your establishment.",
+    "url": "#"
+  },
+  {
+    "title": "Learning and work progress",
+    "description": "View and manage learning and work history, support needs, goals and progress.",
+    "url": "#"
+  },
+  {
+    "title": "People due to leave",
+    "description": "View people due to leave this establishment for court appearances, transfers or being released.",
+    "url": "#"
+  },
+  {
+    "title": "POM cases",
+    "description": "Keep track of your allocations. If you allocate cases, you also can do that here.",
+    "url": "#"
+  },
+  {
+    "title": "Reporting",
+    "description": "Digital Prison Reporting - Find and view reports.",
+    "url": "#"
+  },
+  {
+    "title": "Submit an Intelligence Report",
+    "description": "Access to the new Mercury submission form",
+    "url": "#"
+  },
+  {
+    "title": "Work after leaving prison",
+    "description": "Manage progress in preparing people for work. Match people to jobs and manage applications.",
+    "url": "#"
+  }
+]

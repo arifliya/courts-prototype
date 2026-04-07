@@ -1,0 +1,121 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+ <a href="#" class="govuk-back-link" id="back-link">Back</a>
+</div>
+</div>
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    
+      <div class="govuk-grid-column-two-thirds-from-desktop  govuk-!-margin-top-8">
+        <h1 class="govuk-heading-l">Check this information before saving this court appearance</h1>
+        <h2 class="govuk-heading-m">Personal details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Prisoner name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date and time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 January 2026 at 09:00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="enter-date-time.html">Change<span class="govuk-visually-hidden"> date and time</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type of appearance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="appearance-type.html">Change<span class="govuk-visually-hidden"> type of appearance</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Court location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              72 Guild Street<br>London<br>SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-court.html">Change<span class="govuk-visually-hidden"> court location</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">07700 900457</p>
+              <p class="govuk-body">sarah.phillips@example.com</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="enter-court-reason.html">Change<span class="govuk-visually-hidden"> reason</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Comments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Comments here
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="comments.html">Change<span class="govuk-visually-hidden"> comments</span></a>
+            </dd>
+          </div>
+        </dl>
+         <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm and save
+          </button>
+        </form>
+      </div>
+  
+    
+  </div>
+</div>
+
+
+
+
+{% endblock %}

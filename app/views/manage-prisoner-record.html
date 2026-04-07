@@ -1,0 +1,332 @@
+
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps' %}
+
+{% block beforeContent %}
+  
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <a href="#" class="govuk-back-link" id="back-link">Back</a>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="mini-profile govuk-!-margin-top-7">
+    
+  <div class="mini-profile-inner">
+    <div class="mini-profile-left">
+      <img class="mini-profile-person-img" src="/public/images/prisoner-images/prisoner_5.jpg" alt="Image of Carroll, Jonathon">
+    </div>
+    <div class="mini-profile-right">
+      <ul class="mini-profile-info">
+        <li>
+          <p class="govuk-heading-s govuk-!-margin-bottom-1">
+            <a id="mini-profile-link" class="govuk-link govuk-link--no-visited-state" >{{ data['name'] or 'the person' }}</a>
+          </p>
+          <span class="govuk-body">A5046DZ</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span>
+          <span class="govuk-body">7 April 1993</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span>
+          <span class="govuk-body">Moorland (HMP &amp; YOI)</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span>
+          <span class="govuk-body">RECP</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-width-container ">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6 ">
+    <span class="govuk-caption-l">View and manage court appearances</span>
+    Enter the court appearance date and time</h1>
+
+<button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+  Cancel this appearance
+</button>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#absence-plan">
+        Manage absence plan
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#absence-history">
+        Absence history
+      </a>
+    </li>
+    <!-- <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Past month
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-year">
+        Past year
+      </a>
+    </li> -->
+  </ul>
+  <div class="govuk-tabs__panel" id="absence-plan">
+    
+  
+    <div class="govuk-summary-card govuk-!-margin-bottom-2">
+      <div class="govuk-summary-card__title-wrapper">
+      
+        <h2 class="govuk-summary-card__title">
+          Court appearance information
+        </h2>
+      
+      
+      </div>
+    
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--green">Approved</strong>
+            </dd>
+            
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date and time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Friday 02 February 2026 at 14:00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="enter-date-time.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Court location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-court.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type of appearance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              In person
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="appearance-type.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason
+            </dt>
+            <dd class="govuk-summary-list__value">
+              VIDEO LINK PLEA AND DIRECTIONS HEARING
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="enter-court-reason.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Comments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Some optional comments here about the court appearance
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="comments.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+          
+            
+          
+          
+        
+        </dl>
+      </div>
+    </div>
+  
+  
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="absence-history">
+    <div class="moj-timeline">
+      <div class="moj-timeline__item">
+    
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Absence cancelled</h2>
+          
+            <p class="moj-timeline__byline">by Jim Riaz (JIM_RIAZ_GEN)</p>
+          
+        </div>
+    
+        <p class="moj-timeline__date">
+          <time datetime="2026-02-23T14:02:01.770408">23 February 2026 at 2:02pm</time>
+        </p>
+    
+        <div class="moj-timeline__description">
+          
+            Court appearance cancelled for Paulson Nicolus
+          
+          
+          
+            <br><br>
+            
+              Reason: deleted
+    
+            
+          
+          
+        </div>
+    
+      </div>
+      
+      <div class="moj-timeline__item">
+    
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Appearance migrated</h2>
+          
+        </div>
+    
+        <p class="moj-timeline__date">
+          <time datetime="2026-01-30T14:33:33.900013">30 January 2026 at 2:33pm</time>
+        </p>
+    
+        <div class="moj-timeline__description">
+          
+            Appearance migrated from NOMIS
+          
+          
+          
+          
+        </div>
+    
+      </div>
+      </div>
+
+</div>
+  
+</div>
+
+</div>
+<div class="govuk-grid-column-one-quarter align-right">
+        <h2 class="govuk-heading-m">Related tasks</h2>
+        
+          <p><a class="govuk-link govuk-link--no-visited-state" href="enter-date-time.html">Create a new court appearance for {{ data['name'] or 'the person' }}</a></p>
+        
+
+        </div>
+</div>
+
+</div>
+{% endblock %}
+
+
+  <!-- <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Past month</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">98</td>
+          <td class="govuk-table__cell">95</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">122</td>
+          <td class="govuk-table__cell">131</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">126</td>
+          <td class="govuk-table__cell">142</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Past year</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+

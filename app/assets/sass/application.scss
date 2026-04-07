@@ -1,6 +1,115 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
+
+$govuk-global-styles: true;
+$path: "/public/images/";
+
+$moj-page-width: 1170px;
+$govuk-page-width: $moj-page-width;
+
+p code, li code {
+    color: #d13118;
+    background-color: #f3f2f1;
+    padding: 0 5px;
+}
+
+// DPS styles
+@import "./dps/_dps.scss";
+@import "./dps/_dps-home-page.scss";
+@import "./dps/_dps-header-bar.scss";
+@import "./dps/_dps-footer.scss";
+@import "./dps/_prisoner-search.scss";
+@import "./dps/_horizontal-content.scss";
+@import "./dps/alert-flags.scss";
+@import "./dps/dps-card";
+
+
+@import './dps/prisoner-profile/components/_actions-block.scss';
+@import './dps/prisoner-profile/components/_alert-flags.scss';
+@import './dps/prisoner-profile/components/_alerts.scss';
+@import './dps/prisoner-profile/components/_miniCard.scss';
+@import './dps/prisoner-profile/components/_miniSummary.scss';
+@import './dps/prisoner-profile/components/_profile-banner.scss';
+@import './dps/prisoner-profile/components/_status.scss';
+@import './dps/prisoner-profile/components/_summary-card.scss';
+
+
+@import './dps/prisoner-profile/helpers';
+@import './dps/prisoner-profile/pages/overview';
+@import './dps/prisoner-mini-profile';
+
+
+.block-background {
+    background-color: #f3f3f3;
+    padding: 30px 15px;
+}
+
+.autocomplete__wrapper * {
+
+  @include govuk-typography-common();
+
+}
+
+/* The container: 3 columns, 3 rows */
+.card-group-custom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 15px; /* Adjust spacing as needed */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #b1b4b6; /* Optional GOV.UK style divider */
+}
+
+/* Individual items: Flexbox for internal alignment */
+.card-item {
+  display: flex;
+  flex-direction: column; /* Stacks spans vertically */
+  justify-content: center;
+  padding: 5px;
+  
+}
+
+/* Optional styling for labels vs values */
+.card-item span:first-of-type {
+  font-weight: bold;
+  
+}
+
+.card-item span:last-of-type {
+  margin-top: 4px;
+}
+
+.align-items-right {
+    align-items: end;
+}
+
+.moj-pagination {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        font-weight: 700;
+    }
+}
+
+// filter tag x image location ///
+
+.moj-filter__tag:after {
+    background-image: url(/public/images/icon-tag-remove-cross.svg);
+    content: "";
+    display: inline-block;
+    font-weight: 700;
+    height: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    width: 10px;
+}
+
+.moj-filter__tag:hover:after {
+    background-image: url(/public/images/icon-tag-remove-cross-white.svg);
+}

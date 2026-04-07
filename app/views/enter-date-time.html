@@ -1,0 +1,126 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <a href="#" class="govuk-back-link" id="back-link">Back</a>
+
+</div>
+</div>
+
+
+<div class="govuk-width-container">
+
+
+  <div class="mini-profile govuk-!-margin-top-7">
+    
+  <div class="mini-profile-inner">
+    <div class="mini-profile-left">
+      <img class="mini-profile-person-img" src="/public/images/prisoner-images/prisoner_5.jpg" alt="Image of Carroll, Jonathon">
+    </div>
+    <div class="mini-profile-right">
+      <ul class="mini-profile-info">
+        <li>
+          <p class="govuk-heading-s govuk-!-margin-bottom-1">
+            <a id="mini-profile-link" class="govuk-link govuk-link--no-visited-state" >{{ data['name'] or 'the person' }}</a>
+          </p>
+          <span class="govuk-body">A5046DZ</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span>
+          <span class="govuk-body">7 April 1993</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span>
+          <span class="govuk-body">Moorland (HMP &amp; YOI)</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span>
+          <span class="govuk-body">RECP</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <form action="/appearance-type" method="post">
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-6 govuk-!-margin-top-8">
+    <span class="govuk-caption-l">Create a Court appearance</span>
+    Enter the court appearance date and time</h1>
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-fieldset__legend--m" for="startDate">
+  What date will {{ data['name'] or 'the person' }}’s court appearance be?
+</label>
+
+    <div class="moj-datepicker" data-module="moj-date-picker">
+      <div id="date-hint" class="govuk-hint">
+          For example, 17/5/2024.
+      </div>
+      <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+    </div>
+  </div>
+
+  <br>
+
+
+
+ 
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <label class="govuk-label govuk-fieldset__legend--m" for="startDate">
+      What time will {{ data['name'] or 'the person' }}’s court appearance be?
+    </label>
+    </legend>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Hour
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Minute
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      
+    </div>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

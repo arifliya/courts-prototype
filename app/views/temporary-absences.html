@@ -1,0 +1,93 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="dps-home.html">Digital Prison Services</a>
+      </li>
+    </ol>
+  </nav> 
+</div>
+</div>
+
+<div class="govuk-width-container"><h1 class="govuk-heading-l govuk-!-margin-bottom-6 govuk-!-margin-top-8">Temporary absences</h1></div>
+
+<div class="homepage-card-background">
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="card-group govuk-grid-row">
+              <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="#">Add a temporary absence</a>
+                  </h2>
+                  <p class="govuk-body card__description">Add a single or repeating absence for a prisoner, including ROTL (release on temporary license), police production and security escort.</p>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="#">View and manage absense plans</a>
+                  </h2>
+                  <p class="govuk-body card__description">View, manage and approve temporary absence plans. These set the overall details for all occurrences of the prisoner going out under that plan.</p>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="#">View and manage absence occurrences</a>
+                  </h2>
+                  <p class="govuk-body card__description">View and manage individual occurrences of absence plans, and cancel and edit occurrences.</p>
+                </div>
+              </div>
+            </div> 
+            <!-- end of row -->
+             <div class="card-group govuk-grid-row">
+                 <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="#">Create and download documents</a>
+                  </h2>
+                  <p class="govuk-body card__description">Choose a template to create and download a document for a prisoner.</p>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="#">View a prisoner’s temporary absences</a>
+                  </h2>
+                  <p class="govuk-body card__description">View all temporary absences for an individual prisoner.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

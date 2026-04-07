@@ -7,11 +7,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+    {% include "./content/intro.html" %}
+    {% include "./content/dps-home.html" %}
+    {% include "./content/prisoner-search.html" %}    
+    {% include "./content/prisoner-profile.html" %}
 
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
   </div>

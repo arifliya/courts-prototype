@@ -1,0 +1,217 @@
+.remove-column-gutters {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.remove-column-gutter-left {
+  padding-left: 0;
+}
+
+.remove-column-gutter-right {
+  padding-right: 0;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.center-content {
+  justify-content: center;
+  display: grid;
+}
+
+.hmpps-clickable-image {
+  width: 0;
+
+  &:focus {
+    img {
+      outline: 4px solid $govuk-focus-colour;
+      outline-offset: -1px;
+    }
+  }
+}
+
+.hmpps-icon {
+  top: 4px;
+  position: relative;
+  padding-right: 8px;
+}
+
+.hmpps-font-weight-normal dt {
+  font-weight: normal;
+}
+
+.hmpps-grid-container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.hmpps-display-block {
+  display: block;
+}
+
+.hmpps-display-none {
+  display: none !important;
+}
+
+.hmpps-grey-details-card {
+  border-left: 5px solid govuk-colour('mid-grey');
+  margin: 0;
+  background-color: govuk-colour('light-grey');
+}
+
+.hmpps-dark-grey-font {
+  color: govuk-colour('dark-grey');
+}
+
+.hmpps-white-font {
+  color: govuk-colour('white');
+}
+
+@media (min-width: 40.0625em) {
+  .hmpps-conditional-summary-row {
+    display: table-row-group;
+  }
+}
+
+.govuk-summary-list__row--hidden {
+  display: none;
+}
+
+.prisoner-profile-breadcrumbs {
+  @include govuk-clearfix;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &__back {
+    float: left;
+
+    a::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 2px;
+      width: 0.4375em;
+      height: 0.4375em;
+      margin: auto 0;
+      -ms-transform: rotate(225deg);
+      transform: rotate(225deg);
+      border: solid;
+      border-width: 1px 1px 0 0;
+      border-color: govuk-colour('black');
+    }
+
+    a:link,
+    a:visited {
+      display: inline-block;
+      position: relative;
+      padding-left: 12px;
+      color: govuk-colour('black');
+    }
+  }
+
+  &__search {
+    @include govuk-font($size: 16);
+    float: left;
+
+    &:has(+ .prisoner-profile-breadcrumbs__breadcrumbs ol > li > a) {
+      border-right: 1px solid $govuk-secondary-text-colour;
+      padding-right: govuk-spacing(3);
+      margin-right: govuk-spacing(3);
+    }
+  }
+
+  &__breadcrumbs {
+    float: left;
+  }
+
+  .govuk-breadcrumbs {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.horizontal-information {
+  @media print, (min-width: #{map-get($govuk-breakpoints, 'tablet')}) {
+    padding-bottom: 0;
+    display: flex;
+  }
+
+  &--with-border {
+    padding: govuk-spacing(3) 0;
+    border-top: 1px solid $govuk-border-colour;
+    border-bottom: 1px solid $govuk-border-colour;
+  }
+
+  &__item {
+    @media print, (min-width: #{map-get($govuk-breakpoints, 'tablet')}) {
+      flex: 1 1 0;
+      padding-right: govuk-spacing(3);
+
+      &--tenth {
+        flex-basis: 10%;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Creates width helper classes to set input, paragraph or other element width based on EMs
+// e.g. hmpps-width-20 sets the width of the element to 20em
+// Classes created got from 1em to 40em
+@mixin hmpps-width-x {
+  @for $i from 1 through 40 {
+    .hmpps-width-#{$i} {
+      width: #{$i}em;
+    }
+  }
+}
+@include hmpps-width-x;
+
+.hmpps-border-top {
+  border-top: 1px solid $govuk-border-colour;
+}
+
+.hmpps-border-bottom {
+  border-bottom: 1px solid $govuk-border-colour;
+}
+
+div.hmpps-merged-key-summary-list-row {
+  border-bottom: none !important;
+
+  > .govuk-summary-list__key {
+    vertical-align: top;
+    border-bottom: none;
+  }
+
+  > .govuk-summary-list__value {
+    border-bottom: 1px solid $govuk-border-colour;
+  }
+
+  > .govuk-summary-list__actions {
+    border-bottom: 1px solid $govuk-border-colour;
+  }
+}
+
+.hmpps-vertical-align-top {
+  vertical-align: top;
+}
+
+.hmpps-\!-float-right {
+  float: right;
+}
+
+.anchor-center {
+  position: absolute;
+  transform: translateY(-50vh);
+  visibility: hidden;
+}

@@ -1,0 +1,111 @@
+<div class="govuk-!-display-none-print">
+
+  <div class="prisoner-search__results-options">
+
+    <form method="POST" class="horizontal-form" data-test="prisoner-search-order-form">
+      <input type="hidden" name="_csrf"
+        value="adad8e6a71aa7ae6f0b3743278d801ff9f1e499a4cee87210a4f6883b9269beebdeaa790b17e34271df324bba6c96e02f20d47bd18f4436f8b6b19d5eb87f5506f16f8238572bb2e5356d7568058b3f3ab9e344e84a172dc1d16f39ee5bde3f86778c4cef9e1b3e2c340a10509b14e9fe56da0a23ef54909d560750d44cebce0">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sortFieldsWithOrder">
+          Order 250 results by
+        </label>
+
+        <select class="govuk-select" id="sortFieldsWithOrder" name="sortFieldsWithOrder"
+          data-test="prisoner-search-order">
+          <option value="lastName,firstName:ASC">Last name, First name - A to Z</option>
+          <option value="lastName,firstName:DESC">Last name, First name - Z to A</option>
+          <option value="assignedLivingUnitDesc:ASC">Location - Numbers then A to Z</option>
+          <option value="assignedLivingUnitDesc:DESC">Location - Z to A then numbers</option>
+          <option value="dateOfBirth:DESC">Age - youngest to oldest</option>
+          <option value="dateOfBirth:ASC">Age - oldest to youngest</option>
+        </select>
+      </div>
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"
+        data-test="prisoner-search-order-form-submit">
+        Reorder
+      </button>
+    </form>
+
+    <div class="prisoner-search__toggles">
+      <a href="/prisoner-search?keywords=&amp;location=PNI&amp;view=list"
+        class="govuk-body prisoner-search__toggles__toggle prisoner-search__toggles__toggle--list prisoner-search__toggles__toggle--active">
+        <span>List</span>
+        <svg width="19.7px" height="15.6px" style="margin-left: 10px;">
+          <g>
+            <path d="M2,4.2c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S3.2,4.2,2,4.2z M2,9.6
+          c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S3.2,9.6,2,9.6z M2,15c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S3.2,15,2,15z M19,3.1
+          c0,0.2-0.2,0.3-0.3,0.3H5.8c-0.2,0-0.3-0.2-0.3-0.3v-2c0-0.2,0.2-0.3,0.3-0.3h12.9c0.2,0,0.3,0.2,0.3,0.3V3.1z M19,8.6
+          c0,0.2-0.2,0.3-0.3,0.3H5.8c-0.2,0-0.3-0.2-0.3-0.3v-2c0-0.2,0.2-0.3,0.3-0.3h12.9c0.2,0,0.3,0.2,0.3,0.3V8.6z M19,14
+          c0,0.2-0.2,0.3-0.3,0.3H5.8c-0.2,0-0.3-0.2-0.3-0.3v-2c0-0.2,0.2-0.3,0.3-0.3h12.9c0.2,0,0.3,0.2,0.3,0.3V14z">
+            </path>
+          </g>
+        </svg>
+      </a>
+
+
+      <a href="/prisoner-search?keywords=&amp;location=PNI&amp;view=grid"
+        class="govuk-body prisoner-search__toggles__toggle prisoner-search__toggles__toggle--grid ">
+        <span>Grid</span>
+        <svg width="17.9px" height="15.6px" style="margin-left: 10px;">
+          <g>
+            <path d="M8.1,5.7C8.1,6.4,7.5,7,6.8,7H1.4C0.6,7,0,6.4,0,5.7V1.6c0-0.7,0.6-1.4,1.4-1.4h5.4
+          c0.7,0,1.4,0.6,1.4,1.4V5.7z M8.1,13.8c0,0.7-0.6,1.4-1.4,1.4H1.4c-0.7,0-1.4-0.6-1.4-1.4V9.7C0,9,0.6,8.4,1.4,8.4h5.4
+          c0.7,0,1.4,0.6,1.4,1.4V13.8z M17.6,5.7C17.6,6.4,17,7,16.3,7h-5.4c-0.7,0-1.4-0.6-1.4-1.4V1.6c0-0.7,0.6-1.4,1.4-1.4h5.4
+          c0.7,0,1.4,0.6,1.4,1.4V5.7z M17.6,13.8c0,0.7-0.6,1.4-1.4,1.4h-5.4c-0.7,0-1.4-0.6-1.4-1.4V9.7c0-0.7,0.6-1.4,1.4-1.4h5.4
+          c0.7,0,1.4,0.6,1.4,1.4V13.8z"></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div style="text-align: right">
+  <a href="javascript:window.print()" class="govuk-link print-link govuk-!-display-none-print">
+    Print displayed results
+  </a>
+</div>
+
+
+
+{%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+classes:"govuk-!-margin-bottom-5 govuk-!-margin-top-5",
+items: [{
+text: "1",
+href: "#",
+selected: true
+}, {
+text: "2",
+href: "#"
+}, {
+text: "3",
+href: "#"
+}, {
+type: "dots"
+}, {
+text: "5",
+href: "#"
+}],
+results: {
+count: 250,
+from: 1,
+to: 50,
+text: "results"
+},
+next: {
+text: "Next",
+href: ""
+}
+}) }}
+
+<div class="prisoner-search__options">
+  <a href="#" class="govuk-body govuk-link govuk-link--no-visited-state govuk-!-display-none-print"
+    data-test="prisoner-search-view-all-link">
+    View all results
+  </a>
+</div>

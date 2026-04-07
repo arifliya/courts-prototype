@@ -1,0 +1,45 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
+
+// Add extra styles here
+
+body.dps.home {
+
+  // Key elements
+
+  header {
+    .govuk-width-container {
+      max-width: 1170px;
+    }
+  }
+
+  > .govuk-width-container {
+    max-width: none;
+    margin: 0;
+    .govuk-width-container {
+      max-width: 1170px;
+    }  
+  }
+
+  .govuk-main-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+// Typography
+  p,
+  .govuk-body,
+  .govuk-body-m {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+
+body.dps  main#main-content {
+    padding-top: 0;
+  }
+
+
+

@@ -1,0 +1,99 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+
+
+{% block stylesheets %}
+
+  {{ super() }}
+
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block header %}
+{% include "./includes/dps/header.html" %}
+{% endblock %}
+
+{% block footer %}
+<footer class="connect-dps-common-footer govuk-!-display-none-print" role="contentinfo" data-gtm-vis-recent-on-screen167709157_20="49496" data-gtm-vis-first-on-screen167709157_20="49496" data-gtm-vis-total-visible-time167709157_20="100" data-gtm-vis-has-fired167709157_20="1">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div id="connect-dps-common-footer-services" class="govuk-grid-column-three-quarters connect-dps-common-footer__services-menu">
+                <h2>Services</h2>
+                <ul class="govuk-list">
+                    {% for service in data['dpsServices'] %}
+                    <li><a href="{{ service.url }}" class="connect-dps-common-header__submenu-link">{{ service.title }}</a></li>
+                    {% endfor %}
+            </ul>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+                <div class="connect-dps-common-footer__help">
+                    <h2>Get help with DPS</h2>
+                    <p>Call 0800 917 5148 or #6598 from inside an establishment.</p>
+                </div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="connect-dps-common-footer__support-links">
+                    <h2 class="govuk-visually-hidden">Support links</h2>
+
+                    <ul class="connect-dps-common-footer__inline-list">
+                        <li class="connect-dps-common-footer__inline-list-item">
+                            <a class="connect-dps-common-footer__link" href="#" target="_blank" referrerpolicy="no-referrer" rel="noopener">
+                                Feedback (opens in a new tab)
+                            </a>
+                        </li>
+
+                        <li class="connect-dps-common-footer__inline-list-item">
+                            <a class="connect-dps-common-footer__link" href="#">
+                                Accessibility
+                            </a>
+                        </li>
+                    
+                        <li class="connect-dps-common-footer__inline-list-item">
+                            <a class="connect-dps-common-footer__link" href="#">
+                                Terms and conditions
+                            </a>
+                        </li>
+                    
+                        <li class="connect-dps-common-footer__inline-list-item">
+                            <a class="connect-dps-common-footer__link" href="#">
+                                Privacy policy
+                            </a>
+                        </li>
+                    
+                        <li class="connect-dps-common-footer__inline-list-item">
+                            <a class="connect-dps-common-footer__link" href="#">
+                                Cookies policy
+                            </a>
+                        </li>
+
+                        <li class="connect-dps-common-footer__inline-list-item">
+                            <a class="connect-dps-common-footer__link" href="/manage-prototype/clear-data">
+                                Clear data
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+  {% include "govuk-prototype-kit/includes/scripts.njk" %}
+  {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+    {{ super() }}
+
+  <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  {% endblock %}
+{% endblock %}

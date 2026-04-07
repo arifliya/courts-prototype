@@ -1,0 +1,138 @@
+[
+  {
+    "name": "ACCT open",
+    "value": "HA"
+  },
+  {
+    "name": "ACCT post closure",
+    "value": "HA1"
+  },
+  {
+    "name": "Arsonist",
+    "value": "XA"
+  },
+  {
+    "name": "Care experienced",
+    "value": "LCE"
+  },
+  {
+    "name": "Chemical attacker",
+    "value": "XCA"
+  },
+  {
+    "name": "Concerted indiscipline",
+    "value": "XCI"
+  },
+  {
+    "name": "Conflict",
+    "value": "RCON"
+  },
+  {
+    "name": "Controlled unlock",
+    "value": "XCU"
+  },
+  {
+    "name": "Corruptor",
+    "value": "XCO"
+  },
+  {
+    "name": "CSIP",
+    "value": "CSIP"
+  },
+  {
+    "name": "E-list",
+    "value": "XEL"
+  },
+  {
+    "name": "E-list heightened",
+    "value": "XELH"
+  },
+  {
+    "name": "Escape risk",
+    "value": "XER"
+  },
+  {
+    "name": "Gang member",
+    "value": "XGANG"
+  },
+  {
+    "name": "Hidden disability",
+    "value": "HID"
+  },
+  {
+    "name": "Hostage taker",
+    "value": "XHT"
+  },
+  {
+    "name": "Involved in 2024 civil disorder",
+    "value": "XCDO"
+  },
+  {
+    "name": "Isolated",
+    "value": "VIP"
+  },
+  {
+    "name": "No one-to-one",
+    "value": "RNO121"
+  },
+  {
+    "name": "PEEP",
+    "value": "PEEP"
+  },
+  {
+    "name": "Protective Isolation Unit",
+    "value": "UPIU"
+  },
+  {
+    "name": "Quarantined",
+    "value": "RCDR"
+  },
+  {
+    "name": "Racist",
+    "value": "XR"
+  },
+  {
+    "name": "Refusing to shield",
+    "value": "URS"
+  },
+  {
+    "name": "Reverse Cohorting Unit",
+    "value": "URCU"
+  },
+  {
+    "name": "Risk to females",
+    "value": "XRF"
+  },
+  {
+    "name": "Risk to known adults",
+    "value": "RKS"
+  },
+  {
+    "name": "Risk to LGBT",
+    "value": "RTP,RLG"
+  },
+  {
+    "name": "Shielding Unit",
+    "value": "USU"
+  },
+  {
+    "name": "Staff assaulter",
+    "value": "XSA,SA"
+  },
+  {
+    "name": "TACT",
+    "value": "XTACT"
+  },
+  {
+    "name": "Veteran",
+    "value": "F1"
+  },
+  {
+    "name": "Violent",
+    "value": "XVL"
+  },
+  {
+    "name": "ViSOR",
+    "value": "PVN"
+  }
+]

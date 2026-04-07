@@ -1,0 +1,125 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <a href="#" class="govuk-back-link" id="back-link">Back</a>
+</div>
+</div>
+
+
+<div class="govuk-width-container">
+
+  <div class="mini-profile-inner">
+    <div class="mini-profile-left">
+      <img class="mini-profile-person-img" src="/public/images/prisoner-images/prisoner_5.jpg" alt="Image of Carroll, Jonathon">
+    </div>
+    <div class="mini-profile-right">
+      <ul class="mini-profile-info">
+        <li>
+          <p class="govuk-heading-s govuk-!-margin-bottom-1">
+            <a id="mini-profile-link" class="govuk-link govuk-link--no-visited-state" >{{ data['name'] or 'the person' }}</a>
+          </p>
+          <span class="govuk-body">A5046DZ</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span>
+          <span class="govuk-body">7 April 1993</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span>
+          <span class="govuk-body">Moorland (HMP &amp; YOI)</span>
+        </li>
+        <li>
+          <span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span>
+          <span class="govuk-body">RECP</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+  <form action="/enter-court-reason" method="post">
+ 
+
+<div class="govuk-form-group  govuk-!-margin-top-8">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="event-name"><span class="govuk-caption-l">Create a Court appearance</span>
+      What court is this appearance at?
+    </label>
+    <!-- <span class="govuk-caption-l">What is the name of the event?</span> -->
+  </h1>
+  <label class="govuk-label" for="choose-court">
+    Start typing the name of the court
+  </label>
+
+
+  <select class="govuk-select" name="choose-court" id="choose-court">
+    <option value="Start typing the name of the court"></option>
+    <option value="uksc">Supreme Court of the United Kingdom - Parliament Square, London SW1P 3BD</option>
+  <option value="rcj_london">Royal Courts of Justice - Strand, London WC2A 2LL</option>
+  <option value="old_bailey">Central Criminal Court (Old Bailey) - Old Bailey, London EC4M 7EH</option>
+  <option value="belfast_rcj">Royal Courts of Justice, Belfast - Chichester Street, Belfast BT1 3JF</option>
+  <option value="edinburgh_session">Court of Session - Parliament House, Parliament Square, Edinburgh EH1 1RQ</option>
+  <option value="manchester_crown">Manchester Crown Court (Crown Square) - Crown Square, Manchester M3 3FL</option>
+  <option value="birmingham_mag">Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA</option>
+  <option value="liverpool_crown">Liverpool Crown Court - Derby Square, Liverpool L2 1XA</option>
+  <option value="glasgow_sheriff">Glasgow Sheriff Court - 1 Carlton Place, Glasgow G5 9DA</option>
+  <option value="cardiff_crown">Cardiff Crown Court - The Law Courts, Cathays Park, Cardiff CF10 3PG</option>
+  <option value="leeds_combined">Leeds Combined Court Centre - The Courthouse, 1 Oxford Row, Leeds LS1 3BG</option>
+  <option value="sheffield_combined">Sheffield Combined Court Centre - 50 West Bar, Sheffield S3 8PH</option>
+  <option value="bristol_crown">Bristol Crown Court - The Law Courts, Small Street, Bristol BS1 1DA</option>
+  <option value="newcastle_civil">Newcastle Civil and Family Courts - Barras Bridge, Newcastle upon Tyne NE1 8QF</option>
+  <option value="nottingham_crown">Nottingham Crown Court - 60 Canal Street, Nottingham NG1 7EL</option>
+  <option value="leicester_crown">Leicester Crown Court - 90 Wellington Street, Leicester LE1 6HG</option>
+  <option value="norwich_combined">Norwich Combined Court Centre - The Law Courts, Bishopgate, Norwich NR3 1UR</option>
+  <option value="reading_crown">Reading Crown Court - Old Shire Hall, The Forbury, Reading RG1 3EH</option>
+  <option value="winchester_crown">Winchester Crown Court - The Law Courts, Winchester SO23 9EL</option>
+  <option value="swansea_crown">Swansea Crown Court - The Guildhall, Swansea SA1 4PF</option>
+
+
+  </select>
+ 
+</div>
+  
+
+ 
+
+
+
+ 
+    
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

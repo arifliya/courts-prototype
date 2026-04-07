@@ -1,0 +1,77 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps home' %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="before-content">
+    
+
+
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - your <a href="mailto:external-movements-rollout@justice.gov.uk">feedback</a> will help us to improve it. You can find out more on <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/sites/prisons-digital/SitePages/External%20Movements%20-%20Homepage.aspx">SharePoint</a>.
+    </span>
+  </p>
+</div>
+    
+<div class="govuk-!-display-none-print">
+
+  <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="dps-home.html">Digital Prison Services</a>
+      </li>
+      
+    </ol>
+  </nav> 
+</div>
+</div>
+
+<div class="govuk-width-container"><h1 class="govuk-heading-l govuk-!-margin-bottom-6 govuk-!-margin-top-8">Court appearances</h1></div>
+
+<div class="homepage-card-background">
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="card-group govuk-grid-row">
+              <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="search-for-prisoner.html">Add a court appearance</a>
+                  </h2>
+                  <p class="govuk-body card__description">Add a court appearance for a prisoner, including video links and in person appearances</p>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="search-for-prisoner-manage.html">View and manage court appearances</a>
+                  </h2>
+                  <p class="govuk-body card__description">View and manage court appearances across the prison, including editing and cancelling.</p>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a class="govuk-link govuk-link--no-visited-state card__link" href="#">View a prisoner’s court appearance history</a>
+                  </h2>
+                  <p class="govuk-body card__description">View all scheduled court appearances for a prisoner</p>
+                </div>
+              </div>
+            </div> 
+            <!-- end of row -->
+             
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

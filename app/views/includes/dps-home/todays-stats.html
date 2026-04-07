@@ -1,0 +1,32 @@
+<section class="dps-homepage-today govuk-!-padding-bottom-9">
+  <div class="govuk-width-container">
+    <h2 class="govuk-heading-m">Today in {{ data['prisonName'] }} </h2>
+    <div class="today-card-container">
+        <div class="today-card">
+            <h3>Today's unlock roll</h3>
+            <div class="today-card__count">{{ data['unlockRoll'] }}</div>
+        </div>
+        <div class="today-card">
+            <h3>Current population</h3>
+            <div class="today-card__count">{{ data['currentPop'] }}</div>
+            <div class="today-card__link">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">Establishment roll</a>
+            </div>
+        </div>
+        <div class="today-card">
+            <h3>Arrived today</h3>
+            <div class="today-card__count">{{ data['arrivedToday'] }}</div>
+            <div class="today-card__link">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">Arrived today</a>
+            </div>
+        </div>
+        <div class="today-card">
+            <h3>Out today</h3>
+            <div class="today-card__count">{{ data['outToday'] }}</div>
+            <div class="today-card__link">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">People out today</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
