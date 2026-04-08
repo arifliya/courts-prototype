@@ -71,56 +71,41 @@ if (backLink) {
   });
 }
 
-/////////////////////////
+///////////// accessible autocomplete for what court ////////////
 
-let selectElement = document.querySelector('#choose-court')
+// 1. COURT SELECT
+const courtElement = document.querySelector('#choose-court');
+if (courtElement) {
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: courtElement,
+    id: 'choose-court-autocomplete', // Explicit unique ID for the new input
+    displayMenu: 'overlay',
+    source: (query, populateResults) => {
+      const options = courtElement.querySelectorAll('option');
+      const results = Array.from(options)
+        .filter(opt => opt.text.toLowerCase().includes(query.toLowerCase()))
+        .map(opt => opt.text.trim());
+      populateResults(results);
+    }
+  });
+}
 
-accessibleAutocomplete.enhanceSelectElement({
-
-  defaultValue: '',
-
-  displayMenu: 'overlay',
-
-  source: (query, populateResults) => {
-
-    const options = selectElement.querySelectorAll('option')
-
-    let results = []
-
- 
-
-    options.forEach(
-
-      (opt, i, list) => {
-
-        let queryRegExp = new RegExp(query.trim(), 'i')
-
-        let value = opt.getAttribute('value')
-
-        let text = opt.innerText.trim()
-
-        if (queryRegExp.test(value) || queryRegExp.test(text)) {
-
-          results.push(text)
-
-        }
-
-      }
-
-    )
-
- 
-
-    populateResults(results)
-
-  },
-
-  selectElement: selectElement
-
-})
-
-/////////////////////
-
+// 2. REASON SELECT
+const reasonElement = document.querySelector('#appearance-reason');
+if (reasonElement) {
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: reasonElement,
+    id: 'appearance-reason-autocomplete', // Different explicit unique ID
+    displayMenu: 'overlay',
+    source: (query, populateResults) => {
+      const options = reasonElement.querySelectorAll('option');
+      const results = Array.from(options)
+        .filter(opt => opt.text.toLowerCase().includes(query.toLowerCase()))
+        .map(opt => opt.text.trim());
+      populateResults(results);
+    }
+  });
+}
 
 
 

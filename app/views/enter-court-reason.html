@@ -64,21 +64,72 @@
   <form action="/comments" method="post">
  
 
-<div class="govuk-form-group  govuk-!-margin-top-8">
+<div class="govuk-form-group govuk-!-margin-top-8">
   <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="courtReason"><span class="govuk-caption-l">Create a Court appearance</span>
-      Enter a reason for this  court appearance
+    <label class="govuk-label govuk-label--l" for="appearance-reason">
+      <span class="govuk-caption-l">Create a Court appearance</span>
+      Enter a reason for this appearance
     </label>
-    <!-- <span class="govuk-caption-l">What is the name of the event?</span> -->
   </h1>
   
-  <input class="govuk-input" id="courtReason" name="courtReason" type="text" value="{{ data['courtReason'] }}" >
+  <label class="govuk-label" for="appearance-reason">
+    Start typing the reason for the appearance
+  </label>
 
+  <select class="govuk-select" name="appearance-reason" id="appearance-reason">
+    <option value=""></option>
+
+    {% set reasons = [
+      "Court Appearance",
+      "Discharged to Court",
+      "Video Link (Court Appearance)",
+      "Production of Unsentenced Inmate at Court",
+      "Trial",
+      "Production (Sentence/Civil Custody)",
+      "Sentencing",
+      "Breach hearing",
+      "Court Appearance - Police Product Order",
+      "Court Review",
+      "Bail application",
+      "Discharge to Court on Appeal",
+      "Plea and Directions Hearing",
+      "Expedited Breach Hearing",
+      "Committal Hearing",
+      "Video Link Plea and Direction Hearing",
+      "Witness",
+      "Video Link Appeal",
+      "Video Link Production (Sentencing)",
+      "Video Link Production (Unsent.)",
+      "Appeal Hearing",
+      "Video Link Court Review",
+      "Remittal Hearing",
+      "Video Link Bail Application",
+      "Cond Release Extended Sentence CJA 2003",
+      "Not to Appear Court Date (Diary Only)",
+      "Video Link Committal Hearing",
+      "Video Link Civil Hearing",
+      "Video Link Witness Production",
+      "Video Link Police Production",
+      "Video Link Proceeds of Crime Hearing",
+      "Newton Hearing",
+      "Video Link Breach Hearing",
+      "Video Link Remittal Hearing",
+      "Video Link Expedited Breach Hearing",
+      "Video Link Newton Hearing",
+      "Custody Time Limit"
+    ] %}
+
+    {% for reason in reasons %}
+      <option value="{{ reason }}" {% if data['appearance-reason'] == reason %}selected{% endif %}>{{ reason }}</option>
+    {% endfor %}
+
+  </select>
 </div>
+
   
 
  
-
+ 
 
 
  

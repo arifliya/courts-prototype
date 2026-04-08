@@ -136,7 +136,7 @@
               Friday 02 February 2026 at 14:00
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="enter-date-time.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="enter-date-time.html?date=02/02/2026&hour=14&minute=00">Change<span class="govuk-visually-hidden"> previous application number</span></a>
             </dd>
           </div>
           
@@ -148,7 +148,7 @@
               Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="what-court.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="what-court.html?choose-court=Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA">Change<span class="govuk-visually-hidden"> previous application number</span></a>
             </dd>
           </div>
 
@@ -157,10 +157,10 @@
               Type of appearance
             </dt>
             <dd class="govuk-summary-list__value">
-              In person
+              {{ data['appearanceType'] or 'Court appearance' }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="appearance-type.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="appearance-type.html?appearanceType={{ data['appearanceType'] or 'Court appearance' }}">Change<span class="govuk-visually-hidden"> previous application number</span></a>
             </dd>
           </div>
 
@@ -169,10 +169,10 @@
               Reason
             </dt>
             <dd class="govuk-summary-list__value">
-              VIDEO LINK PLEA AND DIRECTIONS HEARING
+              {{ data['appearance-reason'] or 'Not provided' }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="enter-court-reason.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="enter-court-reason.html?appearance-reason=VIDEO LINK PLEA AND DIRECTIONS HEARING">Change<span class="govuk-visually-hidden"> previous application number</span></a>
             </dd>
           </div>
 
@@ -184,7 +184,7 @@
               Some optional comments here about the court appearance
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="comments.html">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="comments.html?comments=Some optional comments here about the court appearance">Change<span class="govuk-visually-hidden"> previous application number</span></a>
             </dd>
           </div>
           
