@@ -69,15 +69,28 @@
       </h1>
     </legend>
     <div class="govuk-radios" data-module="govuk-radios">
+      {# Option 1: Court appearance #}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="courtAppearance" name="appearanceType" type="radio" value="Court appearance">
-        <label class="govuk-label govuk-radios__label" for="courtAppearance">
+        <input class="govuk-radios__input" 
+               id="appearance-court" 
+               name="appearanceType" 
+               type="radio" 
+               value="Court appearance"
+               {{ "checked" if data['appearanceType'] == "Court appearance" }}>
+        <label class="govuk-label govuk-radios__label" for="appearance-court">
           Court appearance
         </label>
       </div>
+
+      {# Option 2: Video link #}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="videoLink" name="appearanceType" type="radio" value="Video link">
-        <label class="govuk-label govuk-radios__label" for="videoLink">
+        <input class="govuk-radios__input" 
+               id="appearance-video" 
+               name="appearanceType" 
+               type="radio" 
+               value="Video link"
+               {{ "checked" if data['appearanceType'] == "Video link" }}>
+        <label class="govuk-label govuk-radios__label" for="appearance-video">
           Video link
         </label>
       </div>
