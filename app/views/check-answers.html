@@ -43,7 +43,7 @@
               {{ data['name'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="search-for-prisoner-manage.html">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="search-for-prisoner.html">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -69,26 +69,26 @@
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Court location
-            </dt>
+            <dt class="govuk-summary-list__key">Court location</dt>
             <dd class="govuk-summary-list__value">
-              72 Guild Street<br>London<br>SE23 6FH
+              {{ data['choose-court'] or 'Not provided' }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="what-court.html">Change<span class="govuk-visually-hidden"> court location</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="what-court.html?choose-court={{ data['choose-court'] }}">
+                Change<span class="govuk-visually-hidden"> court location</span>
+              </a>
             </dd>
           </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Reason
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">07700 900457</p>
-              <p class="govuk-body">sarah.phillips@example.com</p>
+              {{ data['courtReason'] or 'Not provided' }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="enter-court-reason.html">Change<span class="govuk-visually-hidden"> reason</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="enter-court-reason.html?courtReason={{ data['courtReason'] }}">Change<span class="govuk-visually-hidden"> reason</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -96,10 +96,10 @@
               Comments
             </dt>
             <dd class="govuk-summary-list__value">
-              Comments here
+              {{ data['comments'] or 'Not provided' }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="comments.html">Change<span class="govuk-visually-hidden"> comments</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="comments.html?comments={{ data['comments'] }}">Change<span class="govuk-visually-hidden"> comments</span></a>
             </dd>
           </div>
         </dl>
@@ -114,6 +114,7 @@
     
   </div>
 </div>
+
 
 
 

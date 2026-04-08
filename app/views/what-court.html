@@ -75,42 +75,95 @@
   </label>
 
 
-  <select class="govuk-select" name="choose-court" id="choose-court">
+  <!-- <select class="govuk-select" name="choose-court" id="choose-court">
     <option value="Start typing the name of the court"></option>
-    <option value="uksc">Supreme Court of the United Kingdom - Parliament Square, London SW1P 3BD</option>
-  <option value="rcj_london">Royal Courts of Justice - Strand, London WC2A 2LL</option>
-  <option value="old_bailey">Central Criminal Court (Old Bailey) - Old Bailey, London EC4M 7EH</option>
-  <option value="belfast_rcj">Royal Courts of Justice, Belfast - Chichester Street, Belfast BT1 3JF</option>
-  <option value="edinburgh_session">Court of Session - Parliament House, Parliament Square, Edinburgh EH1 1RQ</option>
-  <option value="manchester_crown">Manchester Crown Court (Crown Square) - Crown Square, Manchester M3 3FL</option>
-  <option value="birmingham_mag">Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA</option>
-  <option value="liverpool_crown">Liverpool Crown Court - Derby Square, Liverpool L2 1XA</option>
-  <option value="glasgow_sheriff">Glasgow Sheriff Court - 1 Carlton Place, Glasgow G5 9DA</option>
-  <option value="cardiff_crown">Cardiff Crown Court - The Law Courts, Cathays Park, Cardiff CF10 3PG</option>
-  <option value="leeds_combined">Leeds Combined Court Centre - The Courthouse, 1 Oxford Row, Leeds LS1 3BG</option>
-  <option value="sheffield_combined">Sheffield Combined Court Centre - 50 West Bar, Sheffield S3 8PH</option>
-  <option value="bristol_crown">Bristol Crown Court - The Law Courts, Small Street, Bristol BS1 1DA</option>
-  <option value="newcastle_civil">Newcastle Civil and Family Courts - Barras Bridge, Newcastle upon Tyne NE1 8QF</option>
-  <option value="nottingham_crown">Nottingham Crown Court - 60 Canal Street, Nottingham NG1 7EL</option>
-  <option value="leicester_crown">Leicester Crown Court - 90 Wellington Street, Leicester LE1 6HG</option>
-  <option value="norwich_combined">Norwich Combined Court Centre - The Law Courts, Bishopgate, Norwich NR3 1UR</option>
-  <option value="reading_crown">Reading Crown Court - Old Shire Hall, The Forbury, Reading RG1 3EH</option>
-  <option value="winchester_crown">Winchester Crown Court - The Law Courts, Winchester SO23 9EL</option>
-  <option value="swansea_crown">Swansea Crown Court - The Guildhall, Swansea SA1 4PF</option>
+    <option value="Supreme Court of the United Kingdom - Parliament Square, London SW1P 3BD">Supreme Court of the United Kingdom - Parliament Square, London SW1P 3BD</option>
+    <option value="Royal Courts of Justice - Strand, London WC2A 2LL">Royal Courts of Justice - Strand, London WC2A 2LL</option>
+    <option value="Central Criminal Court (Old Bailey) - Old Bailey, London EC4M 7EH">Central Criminal Court (Old Bailey) - Old Bailey, London EC4M 7EH</option>
+    <option value="Royal Courts of Justice, Belfast - Chichester Street, Belfast BT1 3JF">Royal Courts of Justice, Belfast - Chichester Street, Belfast BT1 3JF</option>
+    <option value="Court of Session - Parliament House, Parliament Square, Edinburgh EH1 1RQ">Court of Session - Parliament House, Parliament Square, Edinburgh EH1 1RQ</option>
+    <option value="Manchester Crown Court (Crown Square) - Crown Square, Manchester M3 3FL">Manchester Crown Court (Crown Square) - Crown Square, Manchester M3 3FL</option>
+    <option value="Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA">Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA</option>
+    <option value="Liverpool Crown Court - Derby Square, Liverpool L2 1XA">Liverpool Crown Court - Derby Square, Liverpool L2 1XA</option>
+    <option value="Glasgow Sheriff Court - 1 Carlton Place, Glasgow G5 9DA">Glasgow Sheriff Court - 1 Carlton Place, Glasgow G5 9DA</option>
+    <option value="Cardiff Crown Court - The Law Courts, Cathays Park, Cardiff CF10 3PG">Cardiff Crown Court - The Law Courts, Cathays Park, Cardiff CF10 3PG</option>
+    <option value="Leeds Combined Court Centre - The Courthouse, 1 Oxford Row, Leeds LS1 3BG">Leeds Combined Court Centre - The Courthouse, 1 Oxford Row, Leeds LS1 3BG</option>
+    <option value="Sheffield Combined Court Centre - 50 West Bar, Sheffield S3 8PH">Sheffield Combined Court Centre - 50 West Bar, Sheffield S3 8PH</option>
+    <option value="Bristol Crown Court - The Law Courts, Small Street, Bristol BS1 1DA">Bristol Crown Court - The Law Courts, Small Street, Bristol BS1 1DA</option>
+    <option value="Newcastle Civil and Family Courts - Barras Bridge, Newcastle upon Tyne NE1 8QF">Newcastle Civil and Family Courts - Barras Bridge, Newcastle upon Tyne NE1 8QF</option>
+    <option value="Nottingham Crown Court - 60 Canal Street, Nottingham NG1 7EL">Nottingham Crown Court - 60 Canal Street, Nottingham NG1 7EL</option>
+    <option value="Leicester Crown Court - 90 Wellington Street, Leicester LE1 6HG">Leicester Crown Court - 90 Wellington Street, Leicester LE1 6HG</option>
+    <option value="Norwich Combined Court Centre - The Law Courts, Bishopgate, Norwich NR3 1UR">Norwich Combined Court Centre - The Law Courts, Bishopgate, Norwich NR3 1UR</option>
+    <option value="Reading Crown Court - Old Shire Hall, The Forbury, Reading RG1 3EH">Reading Crown Court - Old Shire Hall, The Forbury, Reading RG1 3EH</option>
+    <option value="Winchester Crown Court - The Law Courts, Winchester SO23 9EL">Winchester Crown Court - The Law Courts, Winchester SO23 9EL</option>
+    <option value="Swansea Crown Court - The Guildhall, Swansea SA1 4PF">Swansea Crown Court - The Guildhall, Swansea SA1 4PF</option>
+ </select>  -->
 
+ <select class="govuk-select" name="choose-court" id="choose-court">
+  <option value="Start typing the name of the court"></option>
 
-  </select>
- 
+  <option value="Royal Courts of Justice - Strand, London WC2A 2LL" 
+    {% if data['choose-court'] == 'Royal Courts of Justice - Strand, London WC2A 2LL' %}selected{% endif %}>Royal Courts of Justice - Strand, London WC2A 2LL</option>
+
+  <option value="Central Criminal Court (Old Bailey) - Old Bailey, London EC4M 7EH" 
+    {% if data['choose-court'] == 'Central Criminal Court (Old Bailey) - Old Bailey, London EC4M 7EH' %}selected{% endif %}>Central Criminal Court (Old Bailey) - Old Bailey, London EC4M 7EH</option>
+
+  <option value="Royal Courts of Justice, Belfast - Chichester Street, Belfast BT1 3JF" 
+    {% if data['choose-court'] == 'Royal Courts of Justice, Belfast - Chichester Street, Belfast BT1 3JF' %}selected{% endif %}>Royal Courts of Justice, Belfast - Chichester Street, Belfast BT1 3JF</option>
+
+  <option value="Court of Session - Parliament House, Parliament Square, Edinburgh EH1 1RQ" 
+    {% if data['choose-court'] == 'Court of Session - Parliament House, Parliament Square, Edinburgh EH1 1RQ' %}selected{% endif %}>Court of Session - Parliament House, Parliament Square, Edinburgh EH1 1RQ</option>
+
+  <option value="Manchester Crown Court (Crown Square) - Crown Square, Manchester M3 3FL" 
+    {% if data['choose-court'] == 'Manchester Crown Court (Crown Square) - Crown Square, Manchester M3 3FL' %}selected{% endif %}>Manchester Crown Court (Crown Square) - Crown Square, Manchester M3 3FL</option>
+
+  <option value="Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA" 
+    {% if data['choose-court'] == "Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA" %}selected{% endif %}>Birmingham Magistrates' Court - Victoria Law Courts, Newton St, Birmingham B4 7NA</option>
+
+  <option value="Liverpool Crown Court - Derby Square, Liverpool L2 1XA" 
+    {% if data['choose-court'] == 'Liverpool Crown Court - Derby Square, Liverpool L2 1XA' %}selected{% endif %}>Liverpool Crown Court - Derby Square, Liverpool L2 1XA</option>
+
+  <option value="Glasgow Sheriff Court - 1 Carlton Place, Glasgow G5 9DA" 
+    {% if data['choose-court'] == 'Glasgow Sheriff Court - 1 Carlton Place, Glasgow G5 9DA' %}selected{% endif %}>Glasgow Sheriff Court - 1 Carlton Place, Glasgow G5 9DA</option>
+
+  <option value="Cardiff Crown Court - The Law Courts, Cathays Park, Cardiff CF10 3PG" 
+    {% if data['choose-court'] == 'Cardiff Crown Court - The Law Courts, Cathays Park, Cardiff CF10 3PG' %}selected{% endif %}>Cardiff Crown Court - The Law Courts, Cathays Park, Cardiff CF10 3PG</option>
+
+  <option value="Leeds Combined Court Centre - The Courthouse, 1 Oxford Row, Leeds LS1 3BG" 
+    {% if data['choose-court'] == 'Leeds Combined Court Centre - The Courthouse, 1 Oxford Row, Leeds LS1 3BG' %}selected{% endif %}>Leeds Combined Court Centre - The Courthouse, 1 Oxford Row, Leeds LS1 3BG</option>
+
+  <option value="Sheffield Combined Court Centre - 50 West Bar, Sheffield S3 8PH" 
+    {% if data['choose-court'] == 'Sheffield Combined Court Centre - 50 West Bar, Sheffield S3 8PH' %}selected{% endif %}>Sheffield Combined Court Centre - 50 West Bar, Sheffield S3 8PH</option>
+
+  <option value="Bristol Crown Court - The Law Courts, Small Street, Bristol BS1 1DA" 
+    {% if data['choose-court'] == 'Bristol Crown Court - The Law Courts, Small Street, Bristol BS1 1DA' %}selected{% endif %}>Bristol Crown Court - The Law Courts, Small Street, Bristol BS1 1DA</option>
+  
+  <option value="Newcastle Civil and Family Courts - Barras Bridge, Newcastle upon Tyne NE1 8QF" 
+    {% if data['choose-court'] == 'Newcastle Civil and Family Courts - Barras Bridge, Newcastle upon Tyne NE1 8QF' %}selected{% endif %}>Newcastle Civil and Family Courts - Barras Bridge, Newcastle upon Tyne NE1 8QF</option>
+
+  <option value="Nottingham Crown Court - 60 Canal Street, Nottingham NG1 7EL" 
+    {% if data['choose-court'] == 'Nottingham Crown Court - 60 Canal Street, Nottingham NG1 7EL' %}selected{% endif %}>Nottingham Crown Court - 60 Canal Street, Nottingham NG1 7EL</option>
+
+  <option value="Leicester Crown Court - 90 Wellington Street, Leicester LE1 6HG" 
+    {% if data['choose-court'] == 'Leicester Crown Court - 90 Wellington Street, Leicester LE1 6HG' %}selected{% endif %}>Leicester Crown Court - 90 Wellington Street, Leicester LE1 6HG</option>
+
+  <option value="Norwich Combined Court Centre - The Law Courts, Bishopgate, Norwich NR3 1UR" 
+    {% if data['choose-court'] == 'Norwich Combined Court Centre - The Law Courts, Bishopgate, Norwich NR3 1UR' %}selected{% endif %}>Norwich Combined Court Centre - The Law Courts, Bishopgate, Norwich NR3 1UR</option>
+
+  <option value="Reading Crown Court - Old Shire Hall, The Forbury, Reading RG1 3EH" 
+    {% if data['choose-court'] == 'Reading Crown Court - Old Shire Hall, The Forbury, Reading RG1 3EH' %}selected{% endif %}>Reading Crown Court - Old Shire Hall, The Forbury, Reading RG1 3EH</option>
+
+  <option value="Winchester Crown Court - The Law Courts, Winchester SO23 9EL" 
+    {% if data['choose-court'] == 'Winchester Crown Court - The Law Courts, Winchester SO23 9EL' %}selected{% endif %}>Winchester Crown Court - The Law Courts, Winchester SO23 9EL</option>
+
+  <option value="Swansea Crown Court - The Guildhall, Swansea SA1 4PF" 
+    {% if data['choose-court'] == 'Swansea Crown Court - The Guildhall, Swansea SA1 4PF' %}selected{% endif %}>Swansea Crown Court - The Guildhall, Swansea SA1 4PF</option>
+
+    <!-- Repeat this pattern for the rest of your options -->
+</select>
+
 </div>
   
-
- 
-
-
-
- 
-    
-
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Continue
     </button>
@@ -120,6 +173,20 @@
 </div>
 
 
+<script>
+  window.onload = function() {
+    // 1. Get the value from the URL (e.g., ?choose-court=Supreme%20Court...)
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedCourt = urlParams.get('choose-court');
 
+    // 2. If the parameter exists, find the select box and set its value
+    if (selectedCourt) {
+      const selectEl = document.getElementById('choose-court'); // Ensure your <select> has this ID
+      if (selectEl) {
+        selectEl.value = selectedCourt;
+      }
+    }
+  };
+</script>
 
 {% endblock %}
