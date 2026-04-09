@@ -1263,10 +1263,16 @@
 
 
 </div>
+</div>
 
-
-
-
+    <div class="sticky-action-bar">
+      <!-- // removed style="display: flex;" from above div // -->
+                <div class="govuk-body sticky-action-bar--label">
+                  <strong class="change-count">1 change selected</strong> <button class="clear-select govuk-body govuk-!-margin-bottom-0">Clear</button>
+                </div>
+      <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-!-margin-bottom-0 govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="">
+        Save changes
+      </button>
     </div>
   </div>
 </div>
@@ -1507,6 +1513,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+///////////////// for sticky save bar and changing options in the cards /////
+document.addEventListener('DOMContentLoaded', function () {
+  const stickyBar = document.querySelector('.sticky-action-bar');
+  const changeCountLabel = document.querySelector('.change-count');
+  const clearButton = document.querySelector('.clear-select');
+  
+  // Select all inputs and selects across all 10 card groups
+  const allInputs = document.querySelectorAll('.card-group-custom input, .card-group-custom select');
+  const initialValues = new Map();
+  
+  // Capture initial state for everything
+  allInputs.forEach(input => {
+    initialValues.set(input.id, input.value);
+  });
+
+  function calculateTotalChanges() {
+    let totalChanged = 0;
+    
+    allInputs.forEach(input => {
+      if (input.value !== initialValues.get(input.id)) {
+        totalChanged++;
+      }
+    });
+
+    if (totalChanged > 0) {
+      stickyBar.style.display = 'flex';
+      changeCountLabel.textContent = totalChanged + (totalChanged === 1 ? ' change selected' : ' changes selected');
+    } else {
+      stickyBar.style.display = 'none';
+    }
+  }
+
+  // Listen for any input change on the entire document body
+  document.body.addEventListener('input', function(e) {
+    if (e.target.closest('.card-group-custom')) {
+      calculateTotalChanges();
+    }
+  });
+
+  // Clear button resets everything across all cards
+  clearButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    allInputs.forEach(input => {
+      input.value = initialValues.get(input.id);
+    });
+    calculateTotalChanges();
+  });
+});
 
 
 </script>

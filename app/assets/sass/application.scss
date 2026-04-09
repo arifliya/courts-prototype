@@ -188,3 +188,33 @@ p code, li code {
     margin-top: -1px;
     padding: 20px;
 }
+
+////////////////// sticky save bard /////////////////////////
+
+.sticky-action-bar {
+    justify-content: space-between;
+    display: none;
+    position: sticky;
+    z-index: 1000;
+    bottom: -1px;
+    background-color: #1d70b8;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+}
+
+.sticky-action-bar .sticky-action-bar--label {
+    color: #fff;
+    position: relative;
+    top: 10px;
+}
+
+.sticky-action-bar .sticky-action-bar--label .clear-select {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #fff;
+}
